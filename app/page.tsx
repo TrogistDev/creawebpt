@@ -29,6 +29,7 @@ import {
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { toast } from "sonner"
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,9 +88,11 @@ export default function LandingPage() {
       );
 
       if (response.ok) {
-        alert(
-          "Proposta enviada com sucesso! Verifique o seu e-mail para ativar (se for o primeiro envio)."
-        );
+  toast.success("Proposta enviada com sucesso!", {
+    description: "Verifique o seu e-mail para ativar a sua solicitação.",
+    duration: 5000,
+  });
+}
 
         // AQUI ESTÁ O LIMPA ESTADO:
         setFormData({
