@@ -87,7 +87,7 @@ export default function RootLayout({
               },
               description:
                 "Desenvolvimento de websites e landing pages de alta conversão.",
-              url: "https://creaweb.pt",
+              url: "https://creawebpt.vercel.app",
             }),
           }}
         />
