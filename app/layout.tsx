@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   "soluções digitais para empresários",
   "criação de lojas online",
   "consultoria de presença digital",
+  "Criação de sites portugal",
+    "Web Design Portugal",
+    "Web Design",
 ].join(", "),
   
   // Adições recomendadas:
