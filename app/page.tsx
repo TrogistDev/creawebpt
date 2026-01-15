@@ -11,7 +11,8 @@ import {
   TrendingUp,
   Clock,
   Shield,
-  Facebook, Instagram
+  Facebook,
+  Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,7 +30,7 @@ import {
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -88,10 +89,10 @@ export default function LandingPage() {
       );
 
       if (response.ok) {
-  toast.success("Proposta enviada com sucesso!", {
-    description: "Verifique o seu e-mail para ativar a sua solicitação.",
-    duration: 5000,
-  });
+        toast.success("Proposta enviada com sucesso!", {
+          description: "Verifique o seu e-mail para ativar a sua solicitação.",
+          duration: 5000,
+        });
 
         // AQUI ESTÁ O LIMPA ESTADO:
         setFormData({
@@ -111,11 +112,15 @@ export default function LandingPage() {
           mensagem: "",
         });
       } else {
-        alert("Erro ao enviar. Por favor, tente novamente.");
+        toast.error("Erro ao enviar", {
+          description: "Por favor, tente novamente.",
+        });
       }
     } catch (error) {
       console.error("Erro no envio:", error);
-      alert("Ocorreu um erro de ligação. Tente novamente.");
+      toast.error("Erro de ligação", {
+        description: "Verifique a sua internet e tente novamente.",
+      });
     }
   };
   return (
@@ -145,16 +150,14 @@ export default function LandingPage() {
           <div className="flex items-center justify-between h-16 sm:h-20 ">
             {/* Logo */}
             <div className="pt-2">
-              
-                <Image
-                  src="/logo.png" // O Next.js já sabe que deve procurar dentro da pasta public
-                  alt="Logo Crea Web PT"
-                  width={170}
-                  height={170}
-                  onClick={() => scrollToSection("hero")}
-                  priority // Adicione priority pois o logo está no topo (LCP)
-                />
-              
+              <Image
+                src="/logo.png" // O Next.js já sabe que deve procurar dentro da pasta public
+                alt="Logo Crea Web PT"
+                width={170}
+                height={170}
+                onClick={() => scrollToSection("hero")}
+                priority // Adicione priority pois o logo está no topo (LCP)
+              />
             </div>
 
             {/* Desktop Menu */}
@@ -249,7 +252,10 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8" id="hero">
+      <section
+        className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8"
+        id="hero"
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8 animate-fade-in">
@@ -1071,41 +1077,40 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-[#0D0D0D] border-t border-[#373dff]/20">
-  <div className="container mx-auto text-center space-y-4">
-    
-    {/* Redes Sociais */}
-    <div className="flex justify-center gap-6">
-      <a
-        href="https://www.facebook.com/profile.php?id=61585650845985"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook Crea Web PT"
-        className="text-[#94A3B8] hover:text-[#373dff] transition-colors"
-      >
-        <Facebook className="w-5 h-5" />
-      </a>
+        <div className="container mx-auto text-center space-y-4">
+          {/* Redes Sociais */}
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61585650845985"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook Crea Web PT"
+              className="text-[#94A3B8] hover:text-[#373dff] transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
 
-      <a
-        href="https://www.instagram.com/creawebpt/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram Crea Web PT"
-        className="text-[#94A3B8] hover:text-[#ff00e2] transition-colors"
-      >
-        <Instagram className="w-5 h-5" />
-      </a>
-    </div>
+            <a
+              href="https://www.instagram.com/creawebpt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Crea Web PT"
+              className="text-[#94A3B8] hover:text-[#ff00e2] transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+          </div>
 
-    <p className="text-[#94A3B8]">
-      © 2025 <strong className="text-[#F8FAFC]">Crea Web PT</strong>. Todos os
-      direitos reservados.
-    </p>
+          <p className="text-[#94A3B8]">
+            © 2025 <strong className="text-[#F8FAFC]">Crea Web PT</strong>.
+            Todos os direitos reservados.
+          </p>
 
-    <p className="text-sm text-[#94A3B8]">
-      Transformando ideias em resultados digitais
-    </p>
-  </div>
-</footer>
+          <p className="text-sm text-[#94A3B8]">
+            Transformando ideias em resultados digitais
+          </p>
+        </div>
+      </footer>
 
       <style
         dangerouslySetInnerHTML={{

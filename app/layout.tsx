@@ -2,6 +2,8 @@ import { Inter, Anton, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
 import React from "react";
+import { Toaster } from 'sonner'
+
 
 // Configuração das 3 fontes
 const inter = Inter({
@@ -60,6 +62,7 @@ export default function RootLayout({
         className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}
       >
         {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
