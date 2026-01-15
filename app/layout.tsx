@@ -24,10 +24,44 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Crea Web PT - Websites que Convertem e Geram Resultados",
-  description:
-    "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
-  keywords:
-    "websites portugal, desenvolvimento web, landing pages, aplicações web, design web profissional, conversão online, SEO portugal",
+  description: "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
+  keywords: [
+  "websites profissionais portugal",
+  "criação de landing pages de conversão",
+  "desenvolvimento de aplicações web à medida",
+  "agência de marketing digital portugal",
+  "especialista em SEO e conversão",
+  "desenvolvimento Next.js e React",
+  "soluções digitais para empresários",
+  "criação de lojas online",
+  "consultoria de presença digital",
+].join(", "),
+  
+  // Adições recomendadas:
+  metadataBase: new URL("https://creawebpt.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Crea Web PT - Websites que Convertem",
+    description: "Websites e aplicações web de alta performance para o mercado português.",
+    url: "https://creawebpt.vercel.app",
+    siteName: "Crea Web PT",
+    locale: "pt_PT",
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 // Tipagem do RootLayout adicionada aqui
