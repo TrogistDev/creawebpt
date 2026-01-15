@@ -182,7 +182,7 @@ export default function LandingPage() {
               </button>
               <button
                 onClick={() => scrollToSection("contato")}
-                className="text-[#F8FAFC] hover:text-[#ff00e2] transition-colors text-sm lg:text-base"
+                className="text-[#F8FAFC] hover:text-[#ff00e2] transition-colors text-sm lg:text-base mr-6"
               >
                 Contato
               </button>
@@ -213,7 +213,7 @@ export default function LandingPage() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-[#0D0D0D]/98 backdrop-blur-lg border-b border-[#373dff]/20 shadow-xl">
+            <div className="md:hidden absolute top-full left-0 right-0 bg-[#0D0D0D]/98 backdrop-blur-lg border-b border-[#373dff]/20 shadow-xl ">
               <nav className="flex flex-col py-4 px-4 space-y-3">
                 <button
                   onClick={() => scrollToSection("sobre")}
@@ -508,7 +508,7 @@ export default function LandingPage() {
             <Button
               onClick={() => scrollToSection("contato")}
               size="lg"
-              className="bg-linear-to-r from-[#050deb] to-[#22D3EE] hover:from-[#050deb]/90 hover:to-[#22D3EE]/90 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#050deb]/30 transition-all duration-300 hover:shadow-[#050deb]/50 hover:scale-105"
+              className="w-full sm:w-auto bg-linear-to-r from-[#050deb] to-[#22D3EE] hover:from-[#050deb]/90 hover:to-[#22D3EE]/90 text-white font-semibold px-4 py-4 sm:px-8 sm:py-6 text-base sm:text-lg rounded-lg shadow-lg shadow-[#050deb]/30 transition-all duration-300 hover:shadow-[#050deb]/50 hover:scale-105 whitespace-normal text-center"
             >
               Fale connosco sobre o seu projeto
             </Button>
