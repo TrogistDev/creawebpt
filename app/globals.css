@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* No Tailwind 4, definimos os tokens diretamente com os valores finais */
+  --color-background: hsl(0 0% 5%);
+  --color-foreground: hsl(210 40% 98%);
+  
+  --color-card: hsl(0 0% 10%);
+  --color-card-foreground: hsl(210 40% 98%);
+  
+  --color-popover: hsl(0 0% 10%);
+  --color-popover-foreground: hsl(210 40% 98%);
+  
+  --color-primary: hsl(238 94% 46%);
+  --color-primary-foreground: hsl(210 40% 98%);
+  
+  --color-secondary: hsl(271 93% 46%);
+  --color-secondary-foreground: hsl(210 40% 98%);
+  
+  --color-muted: hsl(215 27.9% 16.9%);
+  --color-muted-foreground: hsl(217.9 10.6% 64.9%);
+  
+  --color-accent: hsl(240 100% 64%);
+  --color-accent-foreground: hsl(210 40% 98%);
+  
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+  
+  /* Corrigido: Para usar opacidade no v4 dentro do HSL */
+  --color-border: hsla(240, 100%, 64%, 0.2);
+  --color-input: hsla(240, 100%, 64%, 0.3);
+  --color-ring: hsl(328 100% 50%);
+  
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Keyframes e Animações migradas para o CSS no v4 */
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar - Mantida igual */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff00e2, #8906e6);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff00e2, #050deb);
 }
