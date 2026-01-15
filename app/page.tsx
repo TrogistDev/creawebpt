@@ -92,7 +92,6 @@ export default function LandingPage() {
     description: "Verifique o seu e-mail para ativar a sua solicitação.",
     duration: 5000,
   });
-}
 
         // AQUI ESTÁ O LIMPA ESTADO:
         setFormData({
