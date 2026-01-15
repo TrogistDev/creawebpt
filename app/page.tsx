@@ -90,7 +90,7 @@ export default function LandingPage() {
 
       if (response.ok) {
         toast.success("Proposta enviada com sucesso!", {
-          description: "Verifique o seu e-mail para ativar a sua solicitação.",
+          description: "Um consultor da Crea Web PT entrará em contacto brevemente.",
           duration: 5000,
         });
 
