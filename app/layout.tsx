@@ -3,6 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import React from "react";
 import { Toaster } from 'sonner'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 // Configuração das 3 fontes
@@ -97,6 +98,7 @@ export default function RootLayout({
       >
         {children}
         <Toaster position="top-right" richColors />
+        <GoogleAnalytics gaId="G-GPM9L20D2C" />
       </body>
     </html>
   );
