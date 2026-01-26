@@ -17,7 +17,7 @@ export default function About() {
           
           {/* Lado Esquerdo: Título Impactante */}
           <div className="lg:w-1/2 space-y-6 flex flex-col justify-between self-stretch">
-            <h2 className="mt-8 text-8xl sm:text-6xl lg:text-8xl font-bold text-white tracking-[-0.05em] leading-[0.85]">
+            <h2 className="mt-8 text-6xl sm:text-6xl lg:text-8xl font-bold text-white tracking-[-0.05em] leading-[0.85]">
               Entendemos <br />
               <span className="bg-gradient-to-r from-[#ff9900] to-[#e69806] bg-clip-text text-transparent pr-2">
                 os desafios
