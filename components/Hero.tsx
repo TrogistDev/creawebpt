@@ -25,7 +25,7 @@ export default function Hero() {
             {/* Tagline */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#373dff]/30">
               <Sparkles className="w-4 h-4 text-[#22D3EE]" />
-              <span className="text-sm text-[#94A3B8]">
+              <span className=" inline-block relative text-sm text-[#94A3B8] px-4 py-2 -my-2">
                 Transforme a sua presença digital em resultados concretos
               </span>
             </div>
