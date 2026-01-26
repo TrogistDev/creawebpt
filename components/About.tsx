@@ -17,7 +17,7 @@ export default function About() {
           
           {/* Lado Esquerdo: Título Impactante */}
           <div className="lg:w-1/2 space-y-6 flex flex-col justify-between self-stretch">
-            <h2 className="mt-8 text-8xl sm:text-7xl lg:text-8xl font-bold text-white tracking-[-0.05em] leading-[0.85]">
+            <h2 className="mt-8 text-8xl sm:text-6xl lg:text-8xl font-bold text-white tracking-[-0.05em] leading-[0.85]">
               Entendemos <br />
               <span className="bg-gradient-to-r from-[#ff9900] to-[#e69806] bg-clip-text text-transparent pr-2">
                 os desafios
@@ -26,7 +26,7 @@ export default function About() {
             </h2>
             {/* Frase de Efeito Final */}
             <div className="pt-4">
-              <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tighter uppercase leading-none opacity-40">
+              <p className="text-3xl sm:text-2xl font-extrabold text-white tracking-tighter uppercase leading-none opacity-40">
                 Clareza <span className="text-[#ff9900]">.</span> Profissionalismo <span className="text-[#ff9900]">.</span> Resultados
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function About() {
           <div className="lg:w-1/2 space-y-12">
             
             {/* Bloco de Problemas (A Dor) */}
-            <div className="space-y-6 text-xl text-[#94A3B8] font-light leading-relaxed">
+            <div className="space-y-6 text-lg text-[#94A3B8] font-light leading-relaxed">
               <p>
                 <strong className="text-[#F8FAFC] font-semibold">Falta de tempo.</strong>{" "}
                 Orçamentos confusos. Receio de investir no projeto errado e não ver retorno real.

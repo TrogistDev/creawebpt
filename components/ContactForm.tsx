@@ -43,7 +43,7 @@ export default function ContactForm() {
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-6xl sm:text-6xl lg:text-8xl font-bold mb-4 -tracking-widest leading-[0.8]">
             Peça uma{" "} <br />
-            <span className="bg-linear-to-r from-[#ffbb00] to-[#e6b206] bg-clip-text text-transparent pr-2">
+            <span className="bg-linear-to-r from-[#ffbb00] to-[#e6b206] bg-clip-text text-transparent pr-2 sm:pr-5">
               proposta personalizada
             </span>
           </h2>
