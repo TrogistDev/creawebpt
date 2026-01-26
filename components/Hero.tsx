@@ -25,7 +25,7 @@ export default function Hero() {
             {/* Tagline */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#373dff]/30">
               <Sparkles className="w-4 h-4 text-[#22D3EE]" />
-              <span className=" inline-block relative text-sm text-[#94A3B8] px-4 py-2 -my-2">
+              <span className=" text-sm text-[#94A3B8]">
                 Transforme a sua presença digital em resultados concretos
               </span>
             </div>
@@ -33,15 +33,15 @@ export default function Hero() {
             {/* Headline */}
 
             <h1 className="text-7xl sm:text-6xl lg:text-8xl font-bold leading-[0.8] text-white tracking-[-0.06em]">
-  Websites que{" "}
-  <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-4 -mr-4">
-    convertem visitantes em clientes
-  </span>{" "}
-  e{" "}
-  <span className="bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-6 -mr-6">
-    geram resultados reais
-  </span>
-</h1>
+              Websites que{" "}
+              <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-2">
+                convertem visitantes em clientes
+              </span>{" "}
+              e{" "}
+              <span className=" inline-block relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-4 -my-2">
+                geram resultados reais
+              </span>
+            </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
