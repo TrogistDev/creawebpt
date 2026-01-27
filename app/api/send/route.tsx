@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // Transformamos o componente React em HTML puro
-    const emailHtml = await render(EmailTemplate(body));
+    const emailHtml = await render(<EmailTemplate {...body} />);
 
     const { data, error } = await resend.emails.send({
       from: 'Crea Web PT <onboarding@resend.dev>',
