@@ -79,7 +79,7 @@ export default function ProjetosGrid() {
                       alt={project.title} 
                       fill 
                       unoptimized 
-                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      className="object-contain transition-transform duration-700 group-hover:scale-110" 
                     />
                   </motion.div>
                 </div>

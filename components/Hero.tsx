@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative mt-10 pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden "
+      className="relative mt-10 pt-24 sm:pt-32 pb-10 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden "
       id="hero"
     >
       <div className="container mx-auto max-w-full">
@@ -32,13 +32,13 @@ export default function Hero() {
 
             {/* Headline */}
 
-            <h1 className=" text-4xl sm:text-7xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
+            <h1 className=" text-5xl sm:text-6xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
               Websites que{" "}
               <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-2">
                 convertem visitantes em clientes
               </span>{" "}
               e{" "}
-              <span className=" inline-block relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-18 -my-4">
+              <span className="relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-10">
                 geram resultados reais
               </span>
             </h1>
