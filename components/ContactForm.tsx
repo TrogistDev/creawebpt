@@ -86,7 +86,7 @@ const [isPending, setIsPending] = useState(false);
     
     {/* Cabeçalho da Seção */}
     <div className="text-center mb-16 animate-fade-in px-4">
-      <h2 className="text-5xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[1.1] lg:leading-[0.9] text-white">
+      <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white">
         Peça uma{" "}
         <span className="inline-block relative">
           <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent px-2 pb-2">
