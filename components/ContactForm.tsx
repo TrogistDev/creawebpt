@@ -351,7 +351,7 @@ const [isPending, setIsPending] = useState(false);
             <Button
             disabled={isPending}
               type="submit"
-              className="w-full bg-gradient-to-r from-[#373dff] to-[#ff00e2] hover:from-[#373dff] hover:to-[#d900c0] text-white font-bold h-20 text-2xl rounded-2xl shadow-[0_0_30px_-5px_rgba(55,61,255,0.4)] hover:shadow-[0_0_50px_-10px_rgba(255,0,226,0.5)] transition-all duration-300 transform hover:-translate-y-1"
+              className="w-full bg-gradient-to-r from-[#373dff] to-[#ff00e2] hover:from-[#373dff] hover:to-[#d900c0] text-white font-bold h-20 text-xl  sm:text-2xl rounded-2xlc shadow-[0_0_30px_-5px_rgba(55,61,255,0.4)] hover:shadow-[0_0_50px_-10px_rgba(255,0,226,0.5)] transition-all duration-300 transform hover:-translate-y-1"
               
             >
               Receber Proposta Gratuita
