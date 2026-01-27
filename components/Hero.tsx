@@ -32,7 +32,7 @@ export default function Hero() {
 
             {/* Headline */}
 
-            <h1 className=" text-4xl sm:text-4xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
+            <h1 className=" text-4xl sm:text-7xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
               Websites que{" "}
               <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-2">
                 convertem visitantes em clientes
