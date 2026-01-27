@@ -3,7 +3,7 @@ import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-[#0D0D0D] border-t border-[#373dff]/20">
+    <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] border-t border-[#373dff]/20">
       <div className="container mx-auto text-center space-y-4">
         {/* Redes Sociais */}
         <div className="flex justify-center gap-6">

@@ -10,44 +10,49 @@ import Footer from "@/components/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0D0D0D] text-[#F8FAFC] overflow-x-hidden">
-      {/* Animated Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ff00e171] opacity-20 blur-[120px] animate-pulse" />
-        <div
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#8906e670] opacity-20 blur-[120px] animate-pulse"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#050deb7a] opacity-15 blur-[120px] animate-pulse"
-          style={{ animationDelay: "2s" }}
-        />
+    <div className="min-h-screen w-full bg-[#0D0D0D] text-[#F8FAFC] overflow-x-hidden relative selection:bg-[#ff00e2] selection:text-white">
+      
+      {/* --- BACKGROUND DE VÍDEO --- */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          /* object-cover garante que no desktop fique horizontal e no mobile vertical preenchendo tudo */
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
+
+        {/* Camada de preto transparente (Tinting) */}
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
       </div>
 
-      {/* Header */}
-      <Header />
+      {/* --- CONTEÚDO DA PÁGINA --- */}
+      {/* z-10 garante que o conteúdo fique acima do vídeo */}
+      <div className="relative z-10 w-full">
+        <Header />
 
-      {/* Hero Section */}
-      <Hero />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <ProjetosGrid /> 
+          
+          {/* O formulário está dentro do ContactForm, mas as regras de CSS abaixo 
+              vão garantir que o "Grupo 02" funcione visualmente ao marcar */}
+          <ContactForm />
+        </main>
+        
+        <Footer />
+      </div>
 
-      {/* Sobre Nós Section */}
-      <About />
-
-      {/* O Que Fazemos Section */}
-      <Services />
-
-      {/* Exemplos de Trabalhos Section */}
-      <ProjetosGrid /> 
-
-      {/* Formulário de Contato */}
-      <ContactForm />
-     
-      {/* Footer */}
-      <Footer />
-
+      {/* --- ESTILOS GLOBAIS --- */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
+        /* Animação de entrada */
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -65,6 +70,30 @@ export default function LandingPage() {
 
         html {
           scroll-behavior: smooth;
+        }
+
+        /* CORREÇÃO DO GRUPO 02 (MARCAÇÃO DAS CAIXAS) */
+        /* Como você usa Radix/Shadcn, o estado é controlado por data-state */
+        [data-state="checked"] .selection-card, 
+        .peer[data-state="checked"] ~ div {
+          background-color: rgba(55, 61, 255, 0.15) !important;
+          border-color: #373dff !important;
+          color: white !important;
+          box-shadow: 0 0 15px rgba(55, 61, 255, 0.2);
+        }
+
+        /* Variação para a cor Rosa no segundo grupo se necessário */
+        [data-state="checked"] .selection-card-pink,
+        .peer[data-state="checked"] ~ .selection-card-pink {
+          background-color: rgba(255, 0, 226, 0.15) !important;
+          border-color: #ff00e2 !important;
+          color: white !important;
+          box-shadow: 0 0 15px rgba(255, 0, 226, 0.2);
+        }
+
+        /* Garante que o vídeo não tenha bordas ou controles */
+        video::-webkit-media-controls {
+          display: none !important;
         }
       `,
         }}

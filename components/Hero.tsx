@@ -16,12 +16,12 @@ export default function Hero() {
 
   return (
     <section
-      className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative mt-10 pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden "
       id="hero"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-left-5 duration-700">
+          <div className="space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-left-5 duration-700 ">
             {/* Tagline */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#373dff]/30">
               <Sparkles className="w-4 h-4 text-[#22D3EE]" />
@@ -32,19 +32,19 @@ export default function Hero() {
 
             {/* Headline */}
 
-            <h1 className="text-7xl sm:text-6xl lg:text-8xl font-bold leading-[0.8] text-white tracking-[-0.06em]">
+            <h1 className=" text-4xl sm:text-4xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
               Websites que{" "}
               <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-2">
                 convertem visitantes em clientes
               </span>{" "}
               e{" "}
-              <span className=" inline-block relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-4 -my-2">
+              <span className=" inline-block relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-18 -my-4">
                 geram resultados reais
               </span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
+            <p className=" sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
               Na <strong className="text-[#F8FAFC]">Crea Web PT</strong>,
               criamos soluções web profissionais para empresários que querem{" "}
               <strong className="text-[#F8FAFC]">aumentar vendas</strong>,

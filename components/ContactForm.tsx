@@ -6,8 +6,15 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -31,299 +38,334 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // A submissão via FormSubmit funciona através do método POST no formulário
-    // Se estiver a usar o FormSubmit.co, o ideal é deixar o formulário lidar com o action
-    console.log("Formulário pronto para envio", formData);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsPending(true);
 
+  // Esta é a forma mais fácil de pegar TODOS os dados do formulário de uma vez, 
+  // incluindo Select e RadioGroup que possuem o atributo 'name'
+  const form = e.currentTarget as HTMLFormElement;
+  const data = Object.fromEntries(new FormData(form));
+  
+
+  try {
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data), // Enviamos o objeto 'data' com todos os campos
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      toast.success("Proposta enviada!", {
+          description: "Recebemos os teus dados e responderemos em 24h.",
+        });
+      form.reset();
+    } else {
+      // Aqui o console vai te dizer exatamente o que a API não gostou
+      console.error("Erro da API:", result);
+      toast.error("Erro ao enviar", {
+          description: result.error?.message || "Tenta novamente mais tarde.",
+        });
+    }
+  } catch (error) {
+    console.error("Erro na requisição:", error);
+    toast.error("Falha na ligação", {
+        description: "Verifica a tua internet.",
+      });;
+  }
+  finally {
+      setIsPending(false); // Termina o carregamento
+    }
+};
+const [isPending, setIsPending] = useState(false);
   return (
-    <section id="contato" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1B]">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-6xl sm:text-6xl lg:text-8xl font-bold mb-4 tracking-[-0.06em] leading-[0.8]">
-            Peça uma{" "} <br />
-            <span className="inline-block relative bg-linear-to-r from-[#ffbb00] to-[#e6b206] bg-clip-text text-transparent px-4 py-2 -my-2">
-              proposta personalizada
-            </span>
-          </h2>
-          <p className="text-lg sm:text-xl text-[#94A3B8] pt-5 tracking-wider">
-            Responda ao formulário abaixo e receba uma proposta detalhada e transparente em 24 horas
-          </p>
-        </div>
+    <section id="contato" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f]">
+  <div className="container mx-auto max-w-[1200px]">
+    
+    {/* Cabeçalho da Seção */}
+    <div className="text-center mb-16 animate-fade-in px-4">
+      <h2 className="text-5xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[1.1] lg:leading-[0.9] text-white">
+        Peça uma{" "}
+        <span className="inline-block relative">
+          <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent px-2 pb-2">
+            proposta personalizada
+          </span>
+          {/* Subtil underline decorativo */}
+          <span className="absolute bottom-2 left-0 w-full h-[6px] bg-[#ffbb00]/20 blur-sm rounded-full"></span>
+        </span>
+      </h2>
+      <p className="text-lg sm:text-2xl text-[#94A3B8] max-w-3xl mx-auto font-light leading-relaxed">
+        Responda ao formulário abaixo e receba uma estratégia detalhada e transparente em 24 horas.
+      </p>
+    </div>
 
-        <Card className="bg-[#0D0D0D] border-[#373dff]/30 shadow-2xl shadow-[#373dff]/10">
-          <CardContent className="p-6 sm:p-8 lg:p-10">
-            {/* Se estiver a usar FormSubmit, adicione action="https://formsubmit.co/seu-email" e method="POST" */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              
-              {/* Nome */}
-              <div className="space-y-2">
-                <Label htmlFor="nome" className="text-[#F8FAFC] font-semibold">
-                  Nome Completo *
+    {/* O Card do Formulário */}
+    <Card className="bg-[#121212] border border-[#373dff]/20 shadow-[0_0_50px_-12px_rgba(55,61,255,0.15)] rounded-3xl overflow-hidden backdrop-blur-sm">
+      
+      {/* Barra de Progresso Decorativa no Topo */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#373dff] via-[#ff00e2] to-[#ffbb00] opacity-70" />
+
+      <CardContent className="p-8 sm:p-12 lg:p-16">
+        <form onSubmit={handleSubmit} className="space-y-12">
+          
+          {/* GRUPO 1: Identificação */}
+          <div className="space-y-8">
+            <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+              01. Sobre Si
+            </h3>
+            
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <Label htmlFor="nome" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                  Nome Completo <span className="text-[#ff00e2]">*</span>
                 </Label>
                 <Input
                   id="nome"
                   name="nome"
-                  type="text"
                   required
                   value={formData.nome}
                   onChange={(e) => handleInputChange("nome", e.target.value)}
-                  className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors"
-                  placeholder="O seu nome"
+                  className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff] focus:shadow-[0_0_20px_rgba(55,61,255,0.3)] transition-all placeholder:text-white/20"
+                  placeholder="Como prefere ser tratado?"
                 />
               </div>
 
-              {/* Email e Telefone */}
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-[#F8FAFC] font-semibold">
-                    Email *
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                    Email Corporativo <span className="text-[#ff00e2]">*</span>
                   </Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     required
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors"
-                    placeholder="seuemail@exemplo.com"
+                    className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff] transition-all placeholder:text-white/20"
+                    placeholder="email@empresa.com"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="telefone" className="text-[#F8FAFC] font-semibold">
-                    Telefone / WhatsApp *
+                <div className="space-y-3">
+                  <Label htmlFor="telefone" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                    WhatsApp / Telefone <span className="text-[#ff00e2]">*</span>
                   </Label>
                   <Input
                     id="telefone"
                     name="telefone"
                     type="tel"
                     required
-                    value={formData.telefone}
-                    onChange={(e) => handleInputChange("telefone", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors"
-                    placeholder="+351 xxx xxx xxx"
+                    className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff] transition-all placeholder:text-white/20"
+                    placeholder="+351 ..."
                   />
                 </div>
               </div>
 
-              {/* Empresa e Área */}
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="empresa" className="text-[#F8FAFC] font-semibold">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <Label htmlFor="empresa" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
                     Nome da Empresa
                   </Label>
                   <Input
                     id="empresa"
                     name="empresa"
-                    type="text"
-                    value={formData.empresa}
-                    onChange={(e) => handleInputChange("empresa", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors"
-                    placeholder="Nome da sua empresa"
+                    className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] transition-all placeholder:text-white/20"
+                    placeholder="Sua marca"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="area" className="text-[#F8FAFC] font-semibold">
-                    Área de Atuação *
+                <div className="space-y-3">
+                  <Label htmlFor="area" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                    Setor de Atuação <span className="text-[#ff00e2]">*</span>
                   </Label>
                   <Input
                     id="area"
                     name="area"
-                    type="text"
                     required
-                    value={formData.area}
-                    onChange={(e) => handleInputChange("area", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors"
-                    placeholder="Ex: Consultoria, Restauração, E-commerce"
+                    className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] transition-all placeholder:text-white/20"
+                    placeholder="Ex: Imobiliário, Saúde, E-commerce"
                   />
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Tipo de Projeto */}
+          {/* GRUPO 2: Detalhes do Projeto (Grid de Cards) */}
+<div className="space-y-8">
+  <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+    02. O Projeto
+  </h3>
+
+  <div className="space-y-4">
+    <Label className="text-[#F8FAFC] text-lg font-semibold ml-1">
+      O que estamos a construir? <span className="text-[#ff00e2]">*</span>
+    </Label>
+    <RadioGroup
+      name="tipoProjeto"
+      required
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+    >
+      {[
+        "Website Institucional",
+        "Landing Page",
+        "Loja Online",
+        "Aplicação Web",
+        "Redesign Completo",
+        "Outro"
+      ].map((label, idx) => (
+        <label key={idx} className="relative group cursor-pointer">
+          {/* O RadioGroupItem precisa estar presente para controlar o estado */}
+          <RadioGroupItem 
+            value={label.toLowerCase().replace(/ /g, "-")} 
+            id={`type-${idx}`} 
+            className="peer sr-only" 
+          />
+          {/* Usamos peer-data-[state=checked] para capturar o clique no componente */}
+          <div className="flex items-center justify-center text-center p-6 h-full rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#94A3B8] transition-all duration-300 hover:bg-[#252526] hover:border-white/20 
+            peer-data-[state=checked]:bg-[#373dff]/20 
+            peer-data-[state=checked]:border-[#373dff] 
+            peer-data-[state=checked]:text-white 
+            peer-data-[state=checked]:shadow-[0_0_20px_rgba(55,61,255,0.3)]">
+            <span className="font-medium text-lg">{label}</span>
+          </div>
+        </label>
+      ))}
+    </RadioGroup>
+  </div>
+
+  <div className="space-y-4 pt-4">
+    <Label className="text-[#F8FAFC] text-lg font-semibold ml-1">
+      Qual o objetivo principal? <span className="text-[#ff00e2]">*</span>
+    </Label>
+    <RadioGroup
+      name="objetivo"
+      required
+      className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+    >
+      {[
+        { title: "Gerar Leads", desc: "Mais contactos e orçamentos" },
+        { title: "Vendas Diretas", desc: "Aumentar faturação online" },
+        { title: "Autoridade", desc: "Melhorar posicionamento da marca" },
+        { title: "Automação", desc: "Otimizar processos internos" },
+      ].map((item, idx) => (
+        <label key={idx} className="relative group cursor-pointer">
+          <RadioGroupItem 
+            value={item.title.toLowerCase().replace(/ /g, "-")} 
+            id={`obj-${idx}`} 
+            className="peer sr-only" 
+          />
+          <div className="flex flex-col p-5 rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#94A3B8] transition-all duration-300 hover:bg-[#252526] 
+            peer-data-[state=checked]:bg-[#ff00e2]/20 
+            peer-data-[state=checked]:border-[#ff00e2] 
+            peer-data-[state=checked]:text-white 
+            peer-data-[state=checked]:shadow-[0_0_20px_rgba(255,0,226,0.2)]">
+            <span className="font-bold text-lg text-[#F8FAFC]">{item.title}</span>
+            <span className="text-sm text-white/40 mt-1">{item.desc}</span>
+          </div>
+        </label>
+      ))}
+    </RadioGroup>
+  </div>
+</div>
+          {/* GRUPO 3: Expectativas */}
+          <div className="space-y-8">
+            <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+              03. Expectativas
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <Label className="text-[#F8FAFC] font-semibold">
-                  Tipo de Projeto Desejado *
+                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                  Urgência <span className="text-[#ff00e2]">*</span>
                 </Label>
-                <RadioGroup
-                  name="tipoProjeto"
-                  value={formData.tipoProjeto}
-                  onValueChange={(value) => handleInputChange("tipoProjeto", value)}
-                  required
-                >
-                  {[
-                    { id: "tipo1", val: "website-institucional", label: "Website Institucional" },
-                    { id: "tipo2", val: "landing-page", label: "Landing Page" },
-                    { id: "tipo3", val: "loja-online", label: "Loja Online" },
-                    { id: "tipo4", val: "aplicacao-web", label: "Aplicação Web" },
-                    { id: "tipo5", val: "outro", label: "Outro" },
-                  ].map((item) => (
-                    <div key={item.id} className="flex items-center space-x-2 p-3 rounded-lg bg-[#1A1A1B] border border-[#373dff]/20 hover:border-[#ff00e2]/50 transition-colors">
-                      <RadioGroupItem value={item.val} id={item.id} className="border-[#373dff]" />
-                      <Label htmlFor={item.id} className="text-[#F8FAFC] cursor-pointer flex-1">
-                        {item.label}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-                {formData.tipoProjeto === "outro" && (
-                  <Input
-                    name="tipoProjetoOutro"
-                    type="text"
-                    value={formData.tipoProjetoOutro}
-                    onChange={(e) => handleInputChange("tipoProjetoOutro", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors mt-2"
-                    placeholder="Especifique o tipo de projeto"
-                  />
-                )}
-              </div>
-
-              {/* Objetivo Principal */}
-              <div className="space-y-3">
-                <Label className="text-[#F8FAFC] font-semibold">
-                  Objetivo Principal do Projeto *
-                </Label>
-                <RadioGroup
-                  name="objetivo"
-                  value={formData.objetivo}
-                  onValueChange={(value) => handleInputChange("objetivo", value)}
-                  required
-                >
-                  {[
-                    { id: "obj1", val: "gerar-contactos", label: "Gerar mais contactos" },
-                    { id: "obj2", val: "vender-online", label: "Vender online" },
-                    { id: "obj3", val: "fortalecer-marca", label: "Fortalecer marca" },
-                    { id: "obj4", val: "automatizar-processos", label: "Automatizar processos" },
-                    { id: "obj5", val: "outro", label: "Outro" },
-                  ].map((item) => (
-                    <div key={item.id} className="flex items-center space-x-2 p-3 rounded-lg bg-[#1A1A1B] border border-[#373dff]/20 hover:border-[#ff00e2]/50 transition-colors">
-                      <RadioGroupItem value={item.val} id={item.id} className="border-[#373dff]" />
-                      <Label htmlFor={item.id} className="text-[#F8FAFC] cursor-pointer flex-1">
-                        {item.label}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-                {formData.objetivo === "outro" && (
-                  <Input
-                    name="objetivoOutro"
-                    type="text"
-                    value={formData.objetivoOutro}
-                    onChange={(e) => handleInputChange("objetivoOutro", e.target.value)}
-                    className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors mt-2"
-                    placeholder="Especifique o objetivo"
-                  />
-                )}
-              </div>
-
-              {/* Já possui Website */}
-              <div className="space-y-3">
-                <Label className="text-[#F8FAFC] font-semibold">
-                  Já possui website? *
-                </Label>
-                <RadioGroup
-                  name="possuiWebsite"
-                  value={formData.possuiWebsite}
-                  onValueChange={(value) => handleInputChange("possuiWebsite", value)}
-                  required
-                  className="flex gap-4"
-                >
-                  <div className="flex items-center space-x-2 p-3 rounded-lg bg-[#1A1A1B] border border-[#373dff]/20 hover:border-[#ff00e2]/50 transition-colors flex-1">
-                    <RadioGroupItem value="sim" id="site1" className="border-[#373dff]" />
-                    <Label htmlFor="site1" className="text-[#F8FAFC] cursor-pointer">Sim</Label>
-                  </div>
-                  <div className="flex items-center space-x-2 p-3 rounded-lg bg-[#1A1A1B] border border-[#373dff]/20 hover:border-[#ff00e2]/50 transition-colors flex-1">
-                    <RadioGroupItem value="nao" id="site2" className="border-[#373dff]" />
-                    <Label htmlFor="site2" className="text-[#F8FAFC] cursor-pointer">Não</Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              {/* Sites de Referência */}
-              <div className="space-y-2">
-                <Label htmlFor="referencias" className="text-[#F8FAFC] font-semibold">
-                  Sites de Referência (links que gosta ou se inspira)
-                </Label>
-                <Textarea
-                  id="referencias"
-                  name="referencias"
-                  value={formData.referencias}
-                  onChange={(e) => handleInputChange("referencias", e.target.value)}
-                  className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors min-h-20"
-                  placeholder="Cole aqui os links de sites que admira..."
-                />
-              </div>
-
-              {/* Prazo e Orçamento */}
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="prazo" className="text-[#F8FAFC] font-semibold">
-                    Prazo Desejado *
-                  </Label>
-                  <Select name="prazo" onValueChange={(v) => handleInputChange("prazo", v)} required>
-                    <SelectTrigger className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC]">
+                <div className="relative">
+                  <Select name="prazo" required>
+                    <SelectTrigger className="w-full h-16 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff]">
                       <SelectValue placeholder="Selecione o prazo" />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#1A1A1B] border-[#373dff]/30 text-white">
-                      <SelectItem value="urgente">Urgente (1-2 semanas)</SelectItem>
-                      <SelectItem value="medio">Médio prazo (3-4 semanas)</SelectItem>
-                      <SelectItem value="flexivel">Flexível (+1 mês)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="orcamento" className="text-[#F8FAFC] font-semibold">
-                    Expectativa de Orçamento *
-                  </Label>
-                  <Select name="orcamento" onValueChange={(v) => handleInputChange("orcamento", v)} required>
-                    <SelectTrigger className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC]">
-                      <SelectValue placeholder="Selecione o orçamento" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-[#1A1A1B] border-[#373dff]/30 text-white">
-                      <SelectItem value="500-1000">500€ – 1.000€</SelectItem>
-                      <SelectItem value="1000-2500">1.000€ – 2.500€</SelectItem>
-                      <SelectItem value="2500+">2.500€+</SelectItem>
+                    <SelectContent className="bg-[#1A1A1B] border border-[#373dff]/20 text-white rounded-xl">
+                      <SelectItem value="urgente" className="py-3 text-lg focus:bg-[#373dff]/20">Para ontem (Urgente)</SelectItem>
+                      <SelectItem value="rapido" className="py-3 text-lg focus:bg-[#373dff]/20">1 a 3 Semanas</SelectItem>
+                      <SelectItem value="normal" className="py-3 text-lg focus:bg-[#373dff]/20">1 Mês +</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
 
-              {/* Mensagem */}
-              <div className="space-y-2">
-                <Label htmlFor="mensagem" className="text-[#F8FAFC] font-semibold">
-                  Mensagem / Detalhes Adicionais
+              <div className="space-y-3">
+                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                  Investimento Previsto <span className="text-[#ff00e2]">*</span>
                 </Label>
-                <Textarea
-                  id="mensagem"
-                  name="mensagem"
-                  value={formData.mensagem}
-                  onChange={(e) => handleInputChange("mensagem", e.target.value)}
-                  className="bg-[#1A1A1B] border-[#373dff]/30 text-[#F8FAFC] focus:border-[#ff00e2] transition-colors min-h-30"
-                  placeholder="Conte-nos mais sobre o seu projeto..."
-                />
+                <div className="relative">
+                  <Select name="orcamento" required>
+                    <SelectTrigger className="w-full h-16 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-2xl focus:border-[#ff00e2] focus:ring-1 focus:ring-[#ff00e2]">
+                      <SelectValue placeholder="Defina um intervalo" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-[#1A1A1B] border border-[#ff00e2]/20 text-white rounded-xl">
+                      <SelectItem value="low" className="py-3 text-lg focus:bg-[#ff00e2]/20">500€ - 1.500€</SelectItem>
+                      <SelectItem value="mid" className="py-3 text-lg focus:bg-[#ff00e2]/20">1.500€ - 3.000€</SelectItem>
+                      <SelectItem value="high" className="py-3 text-lg focus:bg-[#ff00e2]/20">3.000€ - 5.000€</SelectItem>
+                      <SelectItem value="pro" className="py-3 text-lg focus:bg-[#ff00e2]/20">+ 5.000€</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
+            </div>
 
-              {/* Hidden fields for FormSubmit */}
-              <input type="hidden" name="_subject" value="Nova Proposta - Crea Web PT" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
+            <div className="space-y-3">
+              <Label htmlFor="mensagem" className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                Detalhes Adicionais
+              </Label>
+              <Textarea
+                id="mensagem"
+                name="mensagem"
+                className="bg-[#0a0a0a] border border-white/10 text-white text-lg p-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff] min-h-[160px] placeholder:text-white/20"
+                placeholder="Fale-nos sobre referências que gosta, funcionalidades específicas ou desafios atuais..."
+              />
+            </div>
+          </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-linear-to-r from-[#ff00e2] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-white font-bold py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-[1.02]"
-              >
-                Enviar Pedido de Proposta
-              </Button>
+          {/* Footer do Form */}
+          <div className="pt-6 border-t border-white/5 space-y-8">
+            {/* Select de Marketing Estilizado */}
+            <div className="bg-[#1A1A1B]/50 p-6 rounded-2xl border border-white/5">
+                <label className="block text-white font-medium text-lg mb-4">
+                  Gostaria de receber novidades exclusivas? <span className="text-[#ff00e2]">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    name="marketing"
+                    required
+                    className="w-full h-14 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-xl focus:border-[#ff00e2] appearance-none cursor-pointer outline-none transition-colors"
+                    defaultValue=""
+                  >
+                    <option value="" disabled hidden>Selecione uma opção...</option>
+                    <option value="sim">Sim, quero ofertas exclusivas</option>
+                    <option value="nao">Não, apenas a proposta</option>
+                  </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-[#ff00e2]">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+                  </div>
+                </div>
+            </div>
 
-              <p className="text-sm text-[#94A3B8] text-center pt-2">
-                Responderemos em até <strong className="text-[#F8FAFC]">24 horas</strong> com uma proposta detalhada e transparente
-              </p>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
+            <Button
+            disabled={isPending}
+              type="submit"
+              className="w-full bg-gradient-to-r from-[#373dff] to-[#ff00e2] hover:from-[#373dff] hover:to-[#d900c0] text-white font-bold h-20 text-2xl rounded-2xl shadow-[0_0_30px_-5px_rgba(55,61,255,0.4)] hover:shadow-[0_0_50px_-10px_rgba(255,0,226,0.5)] transition-all duration-300 transform hover:-translate-y-1"
+              
+            >
+              Receber Proposta Gratuita
+            </Button>
+            
+            <p className="text-center text-[#94A3B8] text-sm">
+              <span className="opacity-50">🔒 Seus dados estão seguros.</span> Resposta em até 24h úteis.
+            </p>
+          </div>
+
+        </form>
+      </CardContent>
+    </Card>
+  </div>
+</section>
   );
 }

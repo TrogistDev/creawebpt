@@ -3,13 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button"; // Ajuste o caminho conforme seu projeto
+import { Button } from "./ui/button";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Monitora o scroll para mudar o fundo do header
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -18,7 +17,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Função de Scroll Suave
   const scrollToSection = (id: string) => {
     setMenuOpen(false);
     const element = document.getElementById(id);
@@ -29,59 +27,65 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500  ${
         scrolled
-          ? "bg-[#0D0D0D]/95 backdrop-blur-lg border-b border-[#373dff]/20 shadow-lg shadow-[#373dff]/10"
-          : "bg-transparent"
+          ? "bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-2 2xl:py-4"
+          : "bg-transparent py-4 2xl:py-8"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-0 lg:px-0 lg:ml-auto ">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+      {/* Ajuste no container: 
+          - max-w-screen-2xl para não espalhar demais em telas gigantes 
+          - 2xl:px-20 para mais respiro lateral
+      */}
+      <div className="container mx-auto px-6 lg:px-12 2xl:px-20 max-w-[1920px]">
+        <div className="flex items-center justify-between h-16 sm:h-20 2xl:h-28">
           
-          {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer">
+          {/* 1. Logo: Aumenta em telas grandes */}
+          <div className="flex-shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105">
             <Image
               src="/logo.png"
               alt="Logo Crea Web PT"
-              width={150}
-              height={40}
+              width={180} 
+              height={50}
+              // Classes para escalar a logo em 2xl
+              className="object-contain w-[140px] h-auto sm:w-[160px] 2xl:w-[220px]"
               onClick={() => scrollToSection("hero")}
               priority
-              className="object-cover lg:-ml-4 md:-ml-4"
             />
           </div>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-  {["sobre", "servicos", "trabalhos", "contato"].map((item) => (
-    <button
-      key={item}
-      onClick={() => scrollToSection(item)}
-      className={`text-[#F8FAFC] hover:text-[#ff00e2] transition-colors text-sm lg:text-base capitalize ${
-        item === "contato" ? "mr-6" : "" // mr-6 equivale a 24px
-      }`}
-    >
-      {item === "sobre" ? "Sobre nós" : 
-       item === "servicos" ? "O que fazemos" : 
-       item === "trabalhos" ? "Exemplos de trabalhos" : "Contato"}
-    </button>
-  ))}
-</nav>
+          {/* 2. Desktop Menu: gap-x maior e fontes maiores (text-base e text-lg) */}
+          <nav className="hidden md:flex items-center gap-x-10 2xl:gap-x-16">
+            {["sobre", "servicos", "trabalhos", "contato"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="group relative text-[#F8FAFC]/80 hover:text-white transition-all duration-300 text-sm 2xl:text-lg font-medium tracking-widest uppercase"
+              >
+                {item === "sobre" ? "Sobre nós" : 
+                 item === "servicos" ? "Serviços" : 
+                 item === "trabalhos" ? "Portfolio" : "Contato"}
+                
+                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-gradient-to-r from-[#ff00e2] to-[#8906e6] transition-all duration-300 group-hover:w-full" />
+              </button>
+            ))}
+          </nav>
 
-          {/* CTA Button Desktop */}
+          {/* 3. CTA Button: Padding e fonte aumentados */}
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection("contato")}
-              className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-white font-semibold px-6 py-2 rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
+              className="relative overflow-hidden bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-bold px-8 py-6 2xl:px-12 2xl:py-8 2xl:text-xl rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,226,0.4)] active:scale-95"
             >
-              Pedir proposta
+              <span className="relative z-10">Pedir proposta</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:animate-[shimmer_1.5s_infinite]" />
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* 4. Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg bg-[#1A1A1B] hover:bg-[#373dff]/20 transition-colors text-white mr-2"
+            className="md:hidden p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-[#373dff]/20 transition-all text-white"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -89,16 +93,16 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-[#0D0D0D]/98 backdrop-blur-lg border-b border-[#373dff]/20 shadow-xl animate-in slide-in-from-top-5 duration-300">
-            <nav className="flex flex-col py-6 px-6 space-y-4">
+          <div className="md:hidden absolute top-[100%] left-4 right-4 mt-2 bg-[#0D0D0D]/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+            <nav className="flex flex-col p-8 space-y-6">
               <MobileNavLink label="Sobre Nós" onClick={() => scrollToSection("sobre")} />
-              <MobileNavLink label="O Que Fazemos" onClick={() => scrollToSection("servicos")} />
-              <MobileNavLink label="Exemplos de Trabalhos" onClick={() => scrollToSection("trabalhos")} />
+              <MobileNavLink label="Serviços" onClick={() => scrollToSection("servicos")} />
+              <MobileNavLink label="Portfolio" onClick={() => scrollToSection("trabalhos")} />
               <MobileNavLink label="Contato" onClick={() => scrollToSection("contato")} />
               
               <Button
                 onClick={() => scrollToSection("contato")}
-                className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-semibold w-full py-6 text-lg"
+                className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-bold w-full py-8 rounded-2xl text-xl"
               >
                 Pedir Proposta
               </Button>
@@ -106,11 +110,16 @@ export default function Header() {
           </div>
         )}
       </div>
+
+      <style jsx global>{`
+        @keyframes shimmer {
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
     </header>
   );
 }
 
-// Sub-componente para links móveis
 function MobileNavLink({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button

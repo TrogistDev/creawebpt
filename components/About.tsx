@@ -7,9 +7,9 @@ export default function About() {
   return (
     <section
       id="sobre"
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0D0D0D] overflow-hidden"
+      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] overflow-hidden "
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-full">
             <span className="text-[#ff9900] uppercase tracking-[0.5em] text-sm font-medium border-l-2 border-[#ff9900] pl-4 ml-1">
               Sobre a nossa visão
             </span>
@@ -26,7 +26,7 @@ export default function About() {
             </h2>
             {/* Frase de Efeito Final */}
             <div className="pt-4">
-              <p className="text-3xl sm:text-2xl font-extrabold text-white tracking-tighter uppercase leading-none opacity-40">
+              <p className="text-xl sm:text-3xl font-extrabold text-white tracking-tighter uppercase leading-none opacity-40">
                 Clareza <span className="text-[#ff9900]">.</span> Profissionalismo <span className="text-[#ff9900]">.</span> Resultados
               </p>
             </div>

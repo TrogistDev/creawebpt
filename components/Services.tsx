@@ -23,8 +23,8 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="py-20 sm:py-32 px-4 bg-[#020617]">
-      <div className="container mx-auto">
+    <section id="servicos" className="py-20 sm:py-32 px-4 bg-[#0d0d0d2f]">
+      <div className="container mx-auto max-w-full">
         
         {/* Header da Seção - Ajuste de Escala */}
         <div className="text-center mb-16 sm:mb-24">
@@ -44,7 +44,7 @@ export default function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="bg-[#1A1A1B]/50 border-white/5 hover:border-[#373dff]/50 transition-all duration-500 group"
+              className="bg-[#1A1A1B] border-white/5 hover:border-[#373dff]/50 transition-all duration-500 group"
             >
               <CardContent className="p-6 sm:p-8 flex flex-col items-center text-center sm:items-start sm:text-left">
                 {/* Ícone com tamanho fluido */}
