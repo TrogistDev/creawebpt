@@ -81,19 +81,19 @@ export default function ContactForm() {
 };
 const [isPending, setIsPending] = useState(false);
   return (
-    <section id="contato" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f]">
+    <section id="contato" className="py-20 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f]">
   <div className="container mx-auto max-w-[1200px]">
     
     {/* Cabeçalho da Seção */}
-    <div className="text-center mb-16 animate-fade-in px-4">
-      <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white">
+    <div className="text-center mb-16 animate-fade-in -px-4">
+      <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white -border-4">
         Peça uma{" "}
         <span className="inline-block relative">
-          <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent px-2 pb-2">
+          <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent pb-2">
             proposta personalizada
           </span>
           {/* Subtil underline decorativo */}
-          <span className="absolute bottom-2 left-0 w-full h-[6px] bg-[#ffbb00]/20 blur-sm rounded-full"></span>
+          <span className="absolute bottom-2 left-0 w-full h-[6px] bg-[#ffbb00]/20 blur-sm rounded-full "></span>
         </span>
       </h2>
       <p className="text-lg sm:text-2xl text-[#94A3B8] max-w-3xl mx-auto font-light leading-relaxed">
@@ -102,7 +102,7 @@ const [isPending, setIsPending] = useState(false);
     </div>
 
     {/* O Card do Formulário */}
-    <Card className="bg-[#121212] border border-[#373dff]/20 shadow-[0_0_50px_-12px_rgba(55,61,255,0.15)] rounded-3xl overflow-hidden backdrop-blur-sm">
+    <Card className="bg-[#121212] border border-[#373dff]/20 shadow-[0_0_50px_-12px_rgba(55,61,255,0.15)] rounded-3xl overflow-hidden backdrop-blur-sm mx-4">
       
       {/* Barra de Progresso Decorativa no Topo */}
       <div className="h-1 w-full bg-gradient-to-r from-[#373dff] via-[#ff00e2] to-[#ffbb00] opacity-70" />
