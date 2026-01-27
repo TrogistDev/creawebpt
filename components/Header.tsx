@@ -37,18 +37,18 @@ export default function Header() {
           - max-w-screen-2xl para não espalhar demais em telas gigantes 
           - 2xl:px-20 para mais respiro lateral
       */}
-      <div className="container mx-auto px-6 lg:px-12 2xl:px-20 max-w-[1920px]">
+      <div className="container mx-auto pl-0 lg:pl-0 2xl:pl-0 px-6 lg:px-12 2xl:px-20 max-w-[1920px]">
         <div className="flex items-center justify-between h-16 sm:h-20 2xl:h-28">
           
           {/* 1. Logo: Aumenta em telas grandes */}
-          <div className="flex-shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105">
+          <div className="flex-shrink-0  cursor-pointer transition-transform duration-300 hover:scale-105">
             <Image
               src="/logo.png"
               alt="Logo Crea Web PT"
-              width={180} 
-              height={50}
+              width={220} 
+              height={220}
               // Classes para escalar a logo em 2xl
-              className="object-contain w-[140px] h-auto sm:w-[160px] 2xl:w-[220px]"
+              className="object-contain w-[220px] h-auto sm:w-[220px] 2xl:w-[350px] overflow-hidden"
               onClick={() => scrollToSection("hero")}
               priority
             />
