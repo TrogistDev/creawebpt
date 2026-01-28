@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Crea Web PT <onboarding@resend.dev>',
-      to: ['creawebpt@gmail.com'],
+      to: ['trogist15496@gmail.com'],
       subject: `🚀 Nova Proposta: ${body.nome}`,
       html: emailHtml, // Usamos 'html' em vez de 'react'
     });
