@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const emailHtml = await render(<EmailTemplate {...body} />);
 
     const { data, error } = await resend.emails.send({
-      from: 'Crea Web PT <contato@creawebpt.pt>',
+      from: 'Crea Web PT <onboarding@resend.dev>',
       to: ['creawebpt@gmail.com'],
       subject: `🚀 Nova Proposta: ${body.nome}`,
       html: emailHtml, // Usamos 'html' em vez de 'react'
