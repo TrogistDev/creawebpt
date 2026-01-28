@@ -1,20 +1,21 @@
 import * as React from "react";
 
 interface EmailTemplateProps {
-  nome: string;
-  email: string;
-  telefone: string;
-  empresa: string;
-  area: string;
-  tipoProjeto: string;
-  objetivo: string;
-  prazo: string;
-  orcamento: string;
-  mensagem: string;
+  nome?: string;
+  email?: string;
+  telefone?: string;
+  empresa?: string;
+  area?: string;
+  tipoProjeto?: string;
+  objetivo?: string;
+  prazo?: string;
+  orcamento?: string;
+  mensagem?: string;
+  promocao?: string;
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-  nome, email, telefone, empresa, area, tipoProjeto, objetivo, prazo, orcamento, mensagem
+  nome, email, telefone, empresa, area, tipoProjeto, objetivo, prazo, orcamento, promocao, mensagem
 }) => (
   <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f9f9f9', padding: '40px 20px' }}>
     <div style={{ maxWidth: '600px', margin: '0 auto', backgroundColor: '#ffffff', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
@@ -52,6 +53,10 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           <tr>
             <td style={{ padding: '10px 0', borderBottom: '1px solid #eee' }}><strong>Prazo:</strong></td>
             <td style={{ padding: '10px 0', borderBottom: '1px solid #eee' }}>{prazo}</td>
+          </tr>
+          <tr>
+            <td style={{ padding: '10px 0', borderBottom: '1px solid #eee' }}><strong>Promoções:</strong></td>
+            <td style={{ padding: '10px 0', borderBottom: '1px solid #eee' }}>{promocao}</td>
           </tr>
         </table>
 

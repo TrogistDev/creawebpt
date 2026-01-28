@@ -31,6 +31,7 @@ export default function ContactForm() {
     referencias: "",
     prazo: "",
     orcamento: "",
+    promocao: "",
     mensagem: "",
   });
 
@@ -333,7 +334,7 @@ const [isPending, setIsPending] = useState(false);
                 </label>
                 <div className="relative">
                   <select
-                    name="marketing"
+                    name="promocao"
                     required
                     className="w-full h-14 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-xl focus:border-[#ff00e2] appearance-none cursor-pointer outline-none transition-colors"
                     defaultValue=""
