@@ -48,7 +48,7 @@ export default function Header() {
               width={220} 
               height={220}
               // Classes para escalar a logo em 2xl
-              className="object-contain w-[220px] h-auto sm:w-[220px] 2xl:w-[350px] overflow-hidden"
+              className="object-contain w-[220px] h-auto sm:w-[220px] 2xl:w-[220px] overflow-hidden"
               onClick={() => scrollToSection("hero")}
               priority
             />
