@@ -4,8 +4,8 @@ import Script from "next/script";
 
 export default function GoogleReviews() {
   useEffect(() => {
-    // Função para forçar o carregamento
-    const initTrustIndex = () => {
+    // Força a reinicialização sempre que o componente montar
+    const initWidget = () => {
       // @ts-ignore
       if (window.Trustindex && window.Trustindex.init) {
         // @ts-ignore
@@ -13,26 +13,25 @@ export default function GoogleReviews() {
       }
     };
 
-    // Tenta inicializar após um curto delay para garantir que o DOM está pronto
-    const timer = setTimeout(initTrustIndex, 500);
-    
+    // Pequeno delay para garantir que o Next.js terminou a hidratação
+    const timer = setTimeout(initWidget, 1000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="w-full my-8 flex justify-center min-h-[150px]">
+    <>
+      {/* Script com o novo ID (ffad) */}
       <Script
-        src="https://cdn.trustindex.io/loader.js?cf9d922630e7734e1896a941589"
+        src="https://cdn.trustindex.io/loader.js?038cd9263a0c7363cb764cbffad"
         strategy="afterInteractive"
         onLoad={() => {
           // @ts-ignore
           if (window.Trustindex) window.Trustindex.init();
         }}
       />
-      <div 
-        className="ti-widget" 
-        data-layout-id="cf9d922630e7734e1896a941589"
-      ></div>
-    </div>
+      
+      {/* No modo flutuante, esta div serve apenas como âncora de segurança */}
+      <div className="ti-widget" data-layout-id="038cd9263a0c7363cb764cbffad"></div>
+    </>
   );
 }
