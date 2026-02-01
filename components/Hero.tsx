@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Sparkles, Zap, Target, Shield } from "lucide-react";
 import { Button } from "./ui/button";
+import Script from "next/script";
+import GoogleReviews from "./GoogleReviews";
 
 export default function Hero() {
   // Função interna para garantir o scroll suave
@@ -13,6 +15,7 @@ export default function Hero() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+ 
 
   return (
     <section
@@ -42,6 +45,7 @@ export default function Hero() {
                 geram resultados reais
               </span>
             </h1>
+            <GoogleReviews />
 
             {/* Subheadline */}
             <p className=" sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
