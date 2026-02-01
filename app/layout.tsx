@@ -117,10 +117,7 @@ export default function RootLayout({
         className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}
       >
         {children}
-        <Script
-          src="https://cdn.trustindex.io/loader.js?cf9d922630e7734e1896a941589"
-          strategy="afterInteractive"
-        />
+        
 
         <Toaster position="top-right" richColors />
         <GoogleAnalytics gaId="G-GPM9L20D2C" />
