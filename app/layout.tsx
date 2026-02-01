@@ -2,10 +2,9 @@ import { Inter, Anton, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
 import React from "react";
-import { Toaster } from 'sonner'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { Toaster } from "sonner";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
-
 
 // Configuração das 3 fontes
 const inter = Inter({
@@ -26,22 +25,23 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Crea Web PT - Websites que Convertem e Geram Resultados",
-  description: "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
+  description:
+    "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
   keywords: [
-  "websites profissionais portugal",
-  "criação de landing pages de conversão",
-  "desenvolvimento de aplicações web à medida",
-  "agência de marketing digital portugal",
-  "especialista em SEO e conversão",
-  "desenvolvimento Next.js e React",
-  "soluções digitais para empresários",
-  "criação de lojas online",
-  "consultoria de presença digital",
-  "Criação de sites portugal",
+    "websites profissionais portugal",
+    "criação de landing pages de conversão",
+    "desenvolvimento de aplicações web à medida",
+    "agência de marketing digital portugal",
+    "especialista em SEO e conversão",
+    "desenvolvimento Next.js e React",
+    "soluções digitais para empresários",
+    "criação de lojas online",
+    "consultoria de presença digital",
+    "Criação de sites portugal",
     "Web Design Portugal",
     "Web Design",
-].join(", "),
-  
+  ].join(", "),
+
   // Adições recomendadas:
   metadataBase: new URL("https://creawebpt.vercel.app"),
   alternates: {
@@ -49,7 +49,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Crea Web PT - Websites que Convertem",
-    description: "Websites e aplicações web de alta performance para o mercado português.",
+    description:
+      "Websites e aplicações web de alta performance para o mercado português.",
     url: "https://creawebpt.vercel.app",
     siteName: "Crea Web PT",
     locale: "pt_PT",
@@ -116,11 +117,11 @@ export default function RootLayout({
         className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}
       >
         {children}
-        <Script 
-  src="https://cdn.trustindex.io/loader.js?cf9d922630e7734e1896a941589" 
-  strategy="afterInteractive" 
-/>
-        
+        <Script
+          src="https://cdn.trustindex.io/loader.js?cf9d922630e7734e1896a941589"
+          strategy="afterInteractive"
+        />
+
         <Toaster position="top-right" richColors />
         <GoogleAnalytics gaId="G-GPM9L20D2C" />
       </body>
