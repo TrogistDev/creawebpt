@@ -10,7 +10,7 @@ import { X, ExternalLink } from "lucide-react";
 const projects = [
   { id: 1, image: "/dentwise.png", title: "Dentwise - Saúde Digital", description: "Plataforma digital de alta performance desenvolvida para clínicas odontológicas.", link: "https://dentwise-wheat.vercel.app/" },
   { id: 2, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000", title: "Página para análise de dados", description: "Página otimizada para geração de leads qualificados.", link: "#" },
-  { id: 3, image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop", title: "Aplicação web personalizada", description: "Sistema de gestão robusto desenvolvido para automatizar processos.", link: "#" },
+  { id: 3, image: "/Awwards.png", title: "Landing Page", description: "Página de apresentação de produtos e serviços", link: "https://awwards-f5oz.vercel.app" },
 ];
 
 export default function ProjetosGrid() {
