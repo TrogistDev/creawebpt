@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ].join(", "),
 
   // Adições recomendadas:
-  metadataBase: new URL("https://creawebpt.vercel.app"),
+  metadataBase: new URL("https://creawebpt.pt"),
   alternates: {
     canonical: "/",
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Crea Web PT - Websites que Convertem",
     description:
       "Websites e aplicações web de alta performance para o mercado português.",
-    url: "https://creawebpt.vercel.app",
+    url: "https://creawebpt.pt",
     siteName: "Crea Web PT",
     locale: "pt_PT",
     type: "website",
