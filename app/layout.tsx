@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Crea Web PT",
     locale: "pt_PT",
     type: "website",
-    images: ["/og-image.png"],
+    images: ["/favico.png"],
   },
   robots: {
     index: true,
