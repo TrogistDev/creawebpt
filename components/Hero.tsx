@@ -35,14 +35,15 @@ export default function Hero() {
 
             {/* Headline */}
 
-            <h1 className=" text-5xl sm:text-6xl lg:text-9xl font-bold leading-[0.8] text-white tracking-[-0.02em] ">
-              Websites que{" "}
-              <span className="bg-gradient-to-r from-[#ff9100] via-[#e67206] to-[#df9f4c] bg-clip-text text-transparent pr-2">
-                convertem visitantes em clientes
+            <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-white tracking-[-0.06em] ">
+              O padrão de{" "}
+              <span className="bg-gradient-to-r from-[#ff9900] via-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-2">
+               qualidade 
               </span>{" "}
-              e{" "}
-              <span className="relative bg-gradient-to-r from-[#ddaf6b] to-[#eead22] bg-clip-text text-transparent pr-4 pb-10">
-                geram resultados reais
+             global agora disponível em{" "}
+               
+              <span className="relative bg-gradient-to-r from-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-4 pb-10">
+                 Viana do Castelo.
               </span>
             </h1>
             <GoogleReviews />
