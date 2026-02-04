@@ -35,7 +35,7 @@ export default function ProjetosGrid() {
               key={project.id}
               layoutId={`card-container-${project.id}`}
               
-              className="relative w-full cursor-pointer group"
+              className="relative w-full  group"
             >
               <Card className={`w-full h-full bg-[#1A1A1B] border-white/5 overflow-hidden transition-all duration-500 flex flex-col group-hover:scale-101 hover:border-[#373dff]/50 ${selectedId && selectedId !== project.id ? "opacity-20 blur-sm" : "opacity-100"}`}>
                 
