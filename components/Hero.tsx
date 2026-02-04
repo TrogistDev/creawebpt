@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { Sparkles, Zap, Target, Shield } from "lucide-react";
+import { Sparkles, Zap, Target, Shield, DollarSign } from "lucide-react";
 import { Button } from "./ui/button";
 import Script from "next/script";
 import GoogleReviews from "./GoogleReviews";
@@ -15,7 +15,6 @@ export default function Hero() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
- 
 
   return (
     <section
@@ -38,12 +37,11 @@ export default function Hero() {
             <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-white tracking-[-0.06em] ">
               O padrão de{" "}
               <span className="bg-gradient-to-r from-[#ff9900] via-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-2">
-               qualidade 
+                qualidade
               </span>{" "}
-             global agora disponível em{" "}
-               
+              global agora disponível em{" "}
               <span className="relative bg-gradient-to-r from-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-4 pb-10">
-                 Viana do Castelo.
+                Viana do Castelo.
               </span>
             </h1>
             <GoogleReviews />
@@ -88,20 +86,45 @@ export default function Hero() {
             <div className="flex flex-wrap gap-6 pt-4 ">
               <BenefitItem
                 icon={<Zap className="w-5 h-5 text-[#22D3EE] " />}
-                label={<span className="text-white">Entrega Ágil em 48h úteis mínimas</span>}
+                label={
+                  <span className="text-white">
+                    Entrega Ágil em 48h úteis mínimas
+                  </span>
+                }
                 bgColor="bg-[#22D3EE]/10"
-                
-
               />
               <BenefitItem
                 icon={<Target className="w-5 h-5 text-[#ff00e2]" />}
-                label={<span className="text-white">Design Focado em Vendas</span>}
+                label={
+                  <span className="text-white">Design Focado em Vendas</span>
+                }
                 bgColor="bg-[#ff00e2]/10"
               />
               <BenefitItem
                 icon={<Shield className="w-5 h-5 text-[#8906e6]" />}
-                label={<span className="text-white">Resposta em até 1 hora (Horário Comercial)</span>}
+                label={
+                  <span className="text-white">
+                    Resposta em até 1 hora
+                  <span className="block text-[14px] text-zinc-500 mt-0.5">
+                      (Horário Comercial)
+                    </span>
+                  </span>
+                }
                 bgColor="bg-[#8906e6]/10"
+              />
+
+              <BenefitItem
+                icon={<DollarSign className="w-5 h-5 text-[#0de606]" />}
+                label={
+                  <span className="text-white text-sm">
+                    Investimento a partir de 700€{" "}
+                    <span className="text-zinc-400 text-xs">(3x)</span>
+                    <span className="block text-[14px] text-zinc-500 mt-0.5">
+                      + manutenção mensal a partir de 40€
+                    </span>
+                  </span>
+                }
+                bgColor="bg-[#0de606]/10"
               />
             </div>
           </div>
