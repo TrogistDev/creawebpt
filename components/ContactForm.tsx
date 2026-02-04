@@ -346,7 +346,7 @@ export default function ContactForm() {
                         value="low"
                         className="py-3 text-lg focus:bg-[#ff00e2]/20"
                       >
-                        500€ - 1.500€
+                        700€ - 1.500€
                       </SelectItem>
                       <SelectItem
                         value="mid"
@@ -467,7 +467,7 @@ export default function ContactForm() {
                 htmlFor="mensagem"
                 className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
               >
-                Detalhes ou Dores Atuais
+                Detalhes adicionais
               </Label>
               <Textarea
                 id="mensagem"

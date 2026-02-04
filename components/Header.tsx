@@ -64,7 +64,7 @@ export default function Header() {
               >
                 {item === "sobre" ? "Sobre nós" : 
                  item === "servicos" ? "Serviços" : 
-                 item === "trabalhos" ? "Portfolio" : "Contato"}
+                 item === "trabalhos" ? "Portfólio" : "Contato"}
                 
                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-gradient-to-r from-[#ff00e2] to-[#8906e6] transition-all duration-300 group-hover:w-full" />
               </button>
@@ -97,7 +97,7 @@ export default function Header() {
             <nav className="flex flex-col p-8 space-y-6">
               <MobileNavLink label="Sobre Nós" onClick={() => scrollToSection("sobre")} />
               <MobileNavLink label="Serviços" onClick={() => scrollToSection("servicos")} />
-              <MobileNavLink label="Portfolio" onClick={() => scrollToSection("trabalhos")} />
+              <MobileNavLink label="Portfólio" onClick={() => scrollToSection("trabalhos")} />
               <MobileNavLink label="Contato" onClick={() => scrollToSection("contato")} />
               
               <Button
