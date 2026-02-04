@@ -118,7 +118,7 @@ export default function Hero() {
                 label={
                   <span className="text-white text-sm">
                     Investimento a partir de 700€{" "}
-                    <span className="text-zinc-400 text-xs">(3x)</span>
+                    <span className="text-zinc-400 text-xs">(Em até 3x)</span>
                     <span className="block text-[14px] text-zinc-500 mt-0.5">
                       + manutenção mensal a partir de 40€
                     </span>
