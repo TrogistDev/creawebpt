@@ -27,10 +27,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500  ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 p-0 ${
         scrolled
-          ? "bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-2 2xl:py-4"
-          : "bg-transparent py-4 2xl:py-8"
+          ? "bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-0 "
+          : "bg-transparent py-0"
       }`}
     >
       {/* Ajuste no container: 

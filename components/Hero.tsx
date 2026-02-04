@@ -85,20 +85,22 @@ export default function Hero() {
             </div>
 
             {/* Highlights / Benefícios */}
-            <div className="flex flex-wrap gap-6 pt-4">
+            <div className="flex flex-wrap gap-6 pt-4 ">
               <BenefitItem
-                icon={<Zap className="w-5 h-5 text-[#22D3EE]" />}
-                label="Entrega Rápida e Garantida"
+                icon={<Zap className="w-5 h-5 text-[#22D3EE] " />}
+                label={<span className="text-white">Entrega Ágil em 48h úteis mínimas</span>}
                 bgColor="bg-[#22D3EE]/10"
+                
+
               />
               <BenefitItem
                 icon={<Target className="w-5 h-5 text-[#ff00e2]" />}
-                label="Foco em Conversão e ROI"
+                label={<span className="text-white">Design Focado em Vendas</span>}
                 bgColor="bg-[#ff00e2]/10"
               />
               <BenefitItem
                 icon={<Shield className="w-5 h-5 text-[#8906e6]" />}
-                label="Suporte e Confiança Total"
+                label={<span className="text-white">Resposta em até 1 hora (Horário Comercial)</span>}
                 bgColor="bg-[#8906e6]/10"
               />
             </div>
