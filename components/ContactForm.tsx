@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { trackConversion } from "@/utils/gtag";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -70,6 +71,7 @@ export default function ContactForm() {
           window.fbq("track", "Lead");
           console.log("Evento Lead enviado para o Facebook!");
         }
+        trackConversion();
         form.reset();
       } else {
         // Aqui o console vai te dizer exatamente o que a API não gostou
