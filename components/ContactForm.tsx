@@ -93,7 +93,7 @@ export default function ContactForm() {
   return (
     <section
       id="contato"
-      className="py-20 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f]"
+      className="py-20 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] "
     >
       <div className="text-center mb-16 animate-fade-in -px-4">
         <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white -border-4">
@@ -111,7 +111,7 @@ export default function ContactForm() {
           transparente em 24 horas.
         </p>
       </div>
-      <CardContent className="p-8 sm:p-12 lg:p-16 bg-[#0a0a0a]/90">
+      <CardContent className="p-8 sm:p-12 lg:p-16 bg-[#0a0a0a]/90 rounded-3xl">
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* GRUPO 1: Identificação (MANTIDO IGUAL) */}
           <div className="space-y-8">

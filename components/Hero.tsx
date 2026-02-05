@@ -25,42 +25,39 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-left-5 duration-700 ">
             {/* Tagline */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#373dff]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#ff9900]/30">
+              <Sparkles className="w-4 h-4 text-[#ff9900]" />
               <span className=" text-sm text-[#94A3B8]">
-                Transforme a sua presença digital em resultados concretos
+                A diferença entre gerar €10.000 ou €0 está no design
               </span>
             </div>
 
             {/* Headline */}
-
             <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-white tracking-[-0.06em] ">
-              O padrão de{" "}
+              A sua landing page pode gerar{" "}
               <span className="bg-gradient-to-r from-[#ff9900] via-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-2">
-                qualidade
+                €10.000
               </span>{" "}
-              global agora disponível em{" "}
-              <span className="relative bg-gradient-to-r from-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-4 pb-10">
-                Viana do Castelo.
+              em vendas.{" "}
+              <span className="relative text-white pr-4">
+                Ou €0.
               </span>
             </h1>
             <GoogleReviews />
 
             {/* Subheadline */}
             <p className=" sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
-              Na <strong className="text-[#F8FAFC]">Crea Web PT</strong>,
-              criamos soluções web profissionais para empresários que querem{" "}
-              <strong className="text-[#F8FAFC]">aumentar vendas</strong>,
-              <strong className="text-[#F8FAFC]">
-                {" "}
-                gerar contactos qualificados{" "}
-              </strong>
-              e{" "}
-              <strong className="text-[#F8FAFC]">
-                {" "}
-                fortalecer a sua marca{" "}
-              </strong>
-              online. Sem rodeios, apenas resultados mensuráveis.
+              <strong className="text-[#F8FAFC]">A diferença?</strong> Design profissional que converte visitantes em clientes.
+              <br />
+              <br />
+              Por apenas{" "}
+              <strong className="text-[#ff9900]">
+                €700
+              </strong>{" "}
+              <span className="text-[#94A3B8]">(3x sem juros)</span>, tenha uma landing page 
+              que{" "}
+              <strong className="text-[#F8FAFC]">trabalha para si 24/7</strong>{" "}
+              e se paga sozinha em semanas.
             </p>
 
             {/* Call to Action */}
@@ -70,13 +67,13 @@ export default function Hero() {
                 size="lg"
                 className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
               >
-                Pedir proposta grátis
+                Quero uma Proposta Gratuita
               </Button>
               <Button
                 onClick={() => scrollToSection("trabalhos")}
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#373dff] text-[#F8FAFC] hover:bg-[#373dff]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
+                className="border-2 border-[#ff9900] text-[#ff9900] hover:bg-[#ff9900]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
               >
                 Ver exemplos de sucesso
               </Button>
@@ -85,13 +82,13 @@ export default function Hero() {
             {/* Highlights / Benefícios */}
             <div className="flex flex-wrap gap-6 pt-4 ">
               <BenefitItem
-                icon={<Zap className="w-5 h-5 text-[#22D3EE] " />}
+                icon={<Zap className="w-5 h-5 text-[#ff9900] " />}
                 label={
                   <span className="text-white">
                     Entrega Ágil em 48h úteis mínimas
                   </span>
                 }
-                bgColor="bg-[#22D3EE]/10"
+                bgColor="bg-[#ff9900]/10"
               />
               <BenefitItem
                 icon={<Target className="w-5 h-5 text-[#ff00e2]" />}
@@ -105,7 +102,7 @@ export default function Hero() {
                 label={
                   <span className="text-white">
                     Resposta em até 1 hora
-                  <span className="block text-[14px] text-zinc-500 mt-0.5">
+                    <span className="block text-[14px] text-zinc-500 mt-0.5">
                       (Horário Comercial)
                     </span>
                   </span>
@@ -114,7 +111,7 @@ export default function Hero() {
               />
 
               <BenefitItem
-                icon={<DollarSign className="w-5 h-5 text-[#0de606]" />}
+                icon={<DollarSign className="w-5 h-5 text-[#0acf14]" />}
                 label={
                   <span className="text-white text-sm">
                     Investimento a partir de 700€{" "}
@@ -124,15 +121,15 @@ export default function Hero() {
                     </span>
                   </span>
                 }
-                bgColor="bg-[#0de606]/10"
+                bgColor="bg-[#0acf14]/10"
               />
             </div>
           </div>
 
           {/* Hero Image */}
           <div className="relative animate-in fade-in zoom-in-95 duration-1000 delay-200">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff00e2]/20 to-[#050deb]/20 blur-3xl rounded-full" />
-            <div className="relative w-full aspect-video sm:aspect-square lg:aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#373dff]/20 border border-white/10">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ff00e2]/20 to-[#8906e6]/20 blur-3xl rounded-full" />
+            <div className="relative w-full aspect-video sm:aspect-square lg:aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#ff00e2]/20 border border-white/10">
               <Image
                 src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3"
                 alt="Websites Profissionais para Empresários"
@@ -156,7 +153,7 @@ function BenefitItem({
   bgColor,
 }: {
   icon: React.ReactNode;
-  label: string;
+  label: React.ReactNode;
   bgColor: string;
 }) {
   return (

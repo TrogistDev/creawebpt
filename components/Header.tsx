@@ -103,6 +103,7 @@ export default function Header() {
               <Button
                 onClick={() => scrollToSection("contato")}
                 className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-bold w-full py-8 rounded-2xl text-xl"
+                
               >
                 Pedir Proposta
               </Button>
