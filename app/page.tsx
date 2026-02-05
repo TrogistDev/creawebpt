@@ -19,10 +19,11 @@ export default function LandingPage() {
           loop
           muted
           playsInline
+          poster="/poster.webp"
           /* object-cover garante que no desktop fique horizontal e no mobile vertical preenchendo tudo */
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="/video.webm" type="video/webm" />
         </video>
 
         {/* Camada de preto transparente (Tinting) */}
