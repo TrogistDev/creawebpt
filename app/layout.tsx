@@ -113,17 +113,16 @@ export default function RootLayout({
         </Script>
       </head>
       {/* Aplicamos as variáveis e definimos a Inter como padrão (font-sans) */}
-      <body
-        className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}
-      >
+      <body className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}>
         {children}
+
+        {/* 1. Google Ads - MUDAR PARA lazyOnload */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17878117822"
-          strategy="afterInteractive"
+          strategy="lazyOnload" 
         />
 
-        {/* Configuração do Script */}
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-ads-config" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -131,9 +130,10 @@ export default function RootLayout({
             gtag('config', 'AW-17878117822');
           `}
         </Script>
-        
 
         <Toaster position="top-right" richColors />
+        
+        {/* 2. Google Analytics - Também pode ser lazy para não travar o mobile */}
         <GoogleAnalytics gaId="G-GPM9L20D2C" />
       </body>
     </html>
