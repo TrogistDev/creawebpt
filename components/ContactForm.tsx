@@ -111,11 +111,11 @@ export default function ContactForm() {
           transparente em 24 horas.
         </p>
       </div>
-      <CardContent className="p-8 sm:p-12 lg:p-16">
+      <CardContent className="p-8 sm:p-12 lg:p-16 bg-[#0a0a0a]/90">
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* GRUPO 1: Identificação (MANTIDO IGUAL) */}
           <div className="space-y-8">
-            <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+            <h3 className="text-xl text-white font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
               01. Sobre Si
             </h3>
 
@@ -123,7 +123,7 @@ export default function ContactForm() {
               <div className="space-y-3">
                 <Label
                   htmlFor="nome"
-                  className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                  className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
                 >
                   Nome Completo <span className="text-[#ff00e2]">*</span>
                 </Label>
@@ -141,7 +141,7 @@ export default function ContactForm() {
                 <div className="space-y-3">
                   <Label
                     htmlFor="email"
-                    className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                    className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
                   >
                     Email Corporativo <span className="text-[#ff00e2]">*</span>
                   </Label>
@@ -157,7 +157,7 @@ export default function ContactForm() {
                 <div className="space-y-3">
                   <Label
                     htmlFor="telefone"
-                    className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                    className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
                   >
                     WhatsApp / Telefone{" "}
                     <span className="text-[#ff00e2]">*</span>
@@ -176,7 +176,7 @@ export default function ContactForm() {
                 <div className="space-y-3">
                   <Label
                     htmlFor="empresa"
-                    className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                    className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
                   >
                     Nome da Empresa
                   </Label>
@@ -190,7 +190,7 @@ export default function ContactForm() {
                 <div className="space-y-3">
                   <Label
                     htmlFor="area"
-                    className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                    className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
                   >
                     Setor de Atuação <span className="text-[#ff00e2]">*</span>
                   </Label>
@@ -207,11 +207,11 @@ export default function ContactForm() {
           </div>
           {/* GRUPO 2: Detalhes do Projeto (MANTIDO IGUAL) */}
           <div className="space-y-8">
-            <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+            <h3 className="text-xl text-white font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
               02. O Projeto
             </h3>
             <div className="space-y-4">
-              <Label className="text-[#F8FAFC] text-lg font-semibold ml-1">
+              <Label className="text-[#ffffff] text-lg font-semibold ml-1">
                 O que estamos a construir?{" "}
                 <span className="text-[#ff00e2]">*</span>
               </Label>
@@ -235,7 +235,7 @@ export default function ContactForm() {
                       className="peer sr-only"
                     />
                     <div
-                      className="flex items-center justify-center text-center p-6 h-full rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#94A3B8] transition-all duration-300 hover:bg-[#252526] hover:border-white/20
+                      className="flex items-center justify-center text-center p-6 h-full rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#ffffff] transition-all duration-300 hover:bg-[#252526] hover:border-white/20
                   peer-data-[state=checked]:bg-[#373dff]/20
                   peer-data-[state=checked]:border-[#373dff]
                   peer-data-[state=checked]:text-white
@@ -248,7 +248,7 @@ export default function ContactForm() {
               </RadioGroup>
             </div>
             <div className="space-y-4 pt-4">
-              <Label className="text-[#F8FAFC] text-lg font-semibold ml-1">
+              <Label className="text-[#ffffff] text-lg font-semibold ml-1">
                 Qual o objetivo principal?{" "}
                 <span className="text-[#ff00e2]">*</span>
               </Label>
@@ -276,13 +276,13 @@ export default function ContactForm() {
                       className="peer sr-only"
                     />
                     <div
-                      className="flex flex-col p-5 rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#94A3B8] transition-all duration-300 hover:bg-[#252526]
+                      className="flex flex-col p-5 rounded-2xl bg-[#1A1A1B] border border-white/5 text-[#ffffff] transition-all duration-300 hover:bg-[#252526]
                   peer-data-[state=checked]:bg-[#ff00e2]/20
                   peer-data-[state=checked]:border-[#ff00e2]
                   peer-data-[state=checked]:text-white
                   peer-data-[state=checked]:shadow-[0_0_20px_rgba(255,0,226,0.2)]"
                     >
-                      <span className="font-bold text-lg text-[#F8FAFC]">
+                      <span className="font-bold text-lg text-[#ffffff]">
                         {item.title}
                       </span>
                       <span className="text-sm text-white/40 mt-1">
@@ -296,13 +296,13 @@ export default function ContactForm() {
           </div>
           {/* GRUPO 3: Expectativas (ATUALIZADO COM NOVAS PERGUNTAS) */}
           <div className="space-y-8">
-            <h3 className="text-xl text-white/50 font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
+            <h3 className="text-xl text-white font-medium uppercase tracking-widest border-b border-white/10 pb-2 mb-6">
               03. Expectativas & Detalhes
             </h3>
             {/* LINHA 1: Prazo e Investimento (Mantido) */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                <Label className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1">
                   Urgência <span className="text-[#ff00e2]">*</span>
                 </Label>
                 <div className="relative">
@@ -334,7 +334,7 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="space-y-3">
-                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                <Label className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1">
                   Investimento Previsto{" "}
                   <span className="text-[#ff00e2]">*</span>
                 </Label>
@@ -376,7 +376,7 @@ export default function ContactForm() {
             {/* LINHA 2: Conteúdo e Decisão (NOVO - Usando Selects) */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                <Label className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1">
                   Estado do Conteúdo (Texto/Imagens){" "}
                   <span className="text-[#ff00e2]">*</span>
                 </Label>
@@ -415,7 +415,7 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="space-y-3">
-                <Label className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1">
+                <Label className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1">
                   Processo de Decisão
                 </Label>
                 <div className="relative">
@@ -452,7 +452,7 @@ export default function ContactForm() {
             <div className="space-y-3">
               <Label
                 htmlFor="referencias"
-                className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
               >
                 Referências Visuais (Opcional)
               </Label>
@@ -467,7 +467,7 @@ export default function ContactForm() {
             <div className="space-y-3">
               <Label
                 htmlFor="mensagem"
-                className="text-[#94A3B8] text-sm uppercase tracking-wide font-semibold ml-1"
+                className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1"
               >
                 Detalhes adicionais
               </Label>
@@ -519,7 +519,7 @@ export default function ContactForm() {
             </div>
             {/* AVISO IMPORTANTE (Movido para perto do botão) */}
             <div className="text-center space-y-4">
-              <p className="text-lg sm:text-xl text-[#94A3B8] font-light leading-relaxed animate-pulse">
+              <p className="text-lg sm:text-xl text-[#ffffff] font-light leading-relaxed animate-pulse">
                 Responda ao formulário e receba uma estratégia detalhada em 24h.
               </p>
               <Button
@@ -531,7 +531,7 @@ export default function ContactForm() {
               </Button>
             </div>
 
-            <p className="text-center text-[#94A3B8] text-sm">
+            <p className="text-center text-[#ffffff] text-sm">
               <span className="opacity-50">🔒 Seus dados estão seguros.</span>
             </p>
           </div>

@@ -36,14 +36,15 @@ export default function About() {
           <div className="lg:w-1/2 space-y-12">
             
             {/* Bloco de Problemas (A Dor) */}
-            <div className="space-y-6 text-lg text-[#94A3B8] font-light leading-relaxed">
+            <div className=" text-lg text-[#94A3B8] font-light leading-tight tracking-wide
+            ">
               <p>
                 <strong className="text-[#F8FAFC] font-semibold">Falta de tempo.</strong>{" "}
                 Orçamentos confusos. Receio de investir no projeto errado e não ver retorno real.
               </p>
               <p>
                 Já se deparou com promessas de “websites incríveis” que não atraem clientes? 
-                <span className="text-[#F8FAFC] font-medium italic block mt-2">Nós compreendemos a sua frustração.</span>
+                <span className="text-[#F8FAFC] font-medium italic block">Nós compreendemos a sua frustração.</span>
               </p>
             </div>
 
