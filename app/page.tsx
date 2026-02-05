@@ -7,29 +7,16 @@ import Services from "@/components/Services";
 import ProjetosGrid from "@/components/ProjectGrid";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import BackgroundVideo from "@/components/BackgroundVideo";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen w-full bg-[#0D0D0D] text-[#F8FAFC] overflow-x-hidden relative selection:bg-[#ff00e2] selection:text-white">
       
-      {/* --- BACKGROUND DE VÍDEO --- */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          
-          poster="/poster.webp"
-          /* object-cover garante que no desktop fique horizontal e no mobile vertical preenchendo tudo */
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/video.webm" type="video/webm" />
-        </video>
+    
+        <BackgroundVideo />
 
-        {/* Camada de preto transparente (Tinting) */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
-      </div>
+       
 
       {/* --- CONTEÚDO DA PÁGINA --- */}
       {/* z-10 garante que o conteúdo fique acima do vídeo */}
