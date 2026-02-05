@@ -54,7 +54,7 @@ export default function Hero() {
               <strong className="text-[#ff9900]">
                 €700
               </strong>{" "}
-              <span className="text-[#94A3B8]">(3x sem juros)</span>, tenha uma landing page 
+              <span className="text-[#94A3B8]">(em até 3x)</span>, tenha uma landing page 
               que{" "}
               <strong className="text-[#F8FAFC]">trabalha para si 24/7</strong>{" "}
               e se paga sozinha em semanas.
@@ -73,7 +73,7 @@ export default function Hero() {
                 onClick={() => scrollToSection("trabalhos")}
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#ff9900] text-[#ff9900] hover:bg-[#ff9900]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
+                className="border-2 border-[#ff9900] text-[#ffffff] hover:bg-[#ff9900]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
               >
                 Ver exemplos de sucesso
               </Button>
