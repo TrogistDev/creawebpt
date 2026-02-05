@@ -67,11 +67,26 @@ export default function ContactForm() {
         toast.success("Proposta enviada!", {
           description: "Recebemos os teus dados e responderemos em 24h.",
         });
-        if (typeof window !== "undefined" && window.fbq) {
-          window.fbq("track", "Lead");
-          console.log("Evento Lead enviado para o Facebook!");
+        const eventId = `event-${Date.now()}`; // ID único para o evento
+        const email = data.email; // Pegue do input
+        console.log(data.email);
+
+        // 1. Dispara o Pixel normal (se não estiver bloqueado, ele vai)
+        if (window.fbq) {
+          window.fbq("track", "Lead", { email: email }, { eventID: eventId });
         }
-        trackConversion();
+
+        // 2. Dispara a CAPI (sua API interna que os bloqueadores não veem)
+        fetch("/api/fb-capi", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            eventName: "Lead",
+            eventSourceUrl: window.location.href,
+            eventId: eventId,
+          }),
+        });
+        trackConversion(); // Chama a função para enviar o evento de conversão
         form.reset();
       } else {
         // Aqui o console vai te dizer exatamente o que a API não gostou
