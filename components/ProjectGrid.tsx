@@ -9,9 +9,9 @@ import { ExternalLink } from "lucide-react";
 import  TechButton  from "./TechButton";
 
 const projects = [
-  { id: 1, image: "/dentwise.png", title: "Dentwise - Saúde Digital", description: "Plataforma digital de alta performance desenvolvida para clínicas odontológicas.", link: "https://dentwise-wheat.vercel.app/" },
-  { id: 2, image: "/maketto.png", title: "Página para reserva de mesas em noites de sushi", description: "Página de Reservas feito para o Restaurante Sushi Maketto, de Ponte de Lima. Design por terminar.", link: "https://sushi-maketto-reservas.vercel.app" },
-  { id: 3, image: "/Awwards.png", title: "Landing Page", description: "Página de apresentação de produtos e serviços - IN PROGRESS", link: "https://awwards-f5oz.vercel.app" },
+  { id: 1, image: "/dentwise.webp", title: "Dentwise - Saúde Digital", description: "Plataforma digital de alta performance desenvolvida para clínicas odontológicas.", link: "https://dentwise-wheat.vercel.app/" },
+  { id: 2, image: "/maketto.webp", title: "Página para reserva de mesas em noites de sushi", description: "Página de Reservas feito para o Restaurante Sushi Maketto, de Ponte de Lima. Design por terminar.", link: "https://sushi-maketto-reservas.vercel.app" },
+  { id: 3, image: "/Awwards.webp", title: "Landing Page", description: "Página de apresentação de produtos e serviços - IN PROGRESS", link: "https://awwards-f5oz.vercel.app" },
 ];
 
 export default function ProjetosGrid() {

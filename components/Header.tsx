@@ -43,7 +43,7 @@ export default function Header() {
           {/* 1. Logo: Aumenta em telas grandes */}
           <div className="flex-shrink-0  cursor-pointer transition-transform duration-300 hover:scale-105">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Logo Crea Web PT"
               width={220} 
               height={220}
