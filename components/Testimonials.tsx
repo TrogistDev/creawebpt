@@ -17,7 +17,7 @@ interface GoogleReview {
 export default function Testimonials() {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const GOOGLE_MAPS_LINK = "https://search.google.com/local/reviews?placeid=ChIJ8QV6Iee3JQ0Rk8Z-gBhOgGE";
+  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/w7UxGyVappXaJ6fM6";
 
   useEffect(() => {
     async function getReviews() {
