@@ -143,7 +143,7 @@ export default function Services() {
         <div className="text-center mt-16 sm:mt-24">
           <Button
             onClick={() => scrollToSection("contato")}
-            className="w-full sm:w-auto bg-gradient-to-r from-[#050deb] to-[#22D3EE] text-white font-bold px-8 py-6 text-base rounded-xl hover:scale-105 transition-transform"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#050deb] to-[#168697] text-white font-bold px-8 py-6 text-base rounded-xl hover:scale-105 transition-transform"
           >
             Fale connosco sobre o seu projeto
           </Button>
