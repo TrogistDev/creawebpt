@@ -110,20 +110,24 @@ export default function ContactForm() {
       id="contato"
       className="py-20 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] "
     >
-      <div className="text-center mb-16 animate-fade-in -px-4">
+      <div className="text-center mb-16 animate-fade-in -px-4 bg-black/10  w-fit mx-auto">
         <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white -border-4">
-          Peça uma{" "}
+          O fim das{" "}
           <span className="inline-block relative">
-            <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent pb-2">
-              proposta personalizada
+            <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent pb-2 pr-2">
+              reuniões inúteis
             </span>
-            {/* Subtil underline decorativo */}
             <span className="absolute bottom-2 left-0 w-full h-[6px] bg-[#ffbb00]/20 blur-sm rounded-full "></span>
           </span>
         </h2>
-        <p className="text-lg sm:text-2xl text-[#94A3B8] max-w-3xl mx-auto font-light leading-relaxed">
-          Responda ao formulário abaixo e receba uma estratégia detalhada e
-          transparente em 24 horas.
+        <p className="text-lg sm:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
+          Toda agência pedirá estes dados. Nós apenas os organizamos para você
+          não perder 1 hora em call.
+          <span className="text-white font-medium">
+            {" "}
+            Responda em 2 minutos
+          </span>{" "}
+          e receba sua proposta em algumas horas.
         </p>
       </div>
       <CardContent className="p-8 sm:p-12 lg:p-16 bg-[#0a0a0a]/90 rounded-3xl">
