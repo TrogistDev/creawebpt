@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="sobre"
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d00] overflow-hidden "
+      className="py-20  px-4 sm:px-6 lg:px-8 bg-[#0d0d0d00] overflow-hidden "
     >
       <div className="container mx-auto max-w-full">
             <span className="text-[#ff9900] uppercase tracking-[0.5em] text-sm font-medium border-l-2 border-[#ff9900] pl-4 ml-1">

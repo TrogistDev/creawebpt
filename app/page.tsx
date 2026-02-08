@@ -8,6 +8,7 @@ import ProjetosGrid from "@/components/ProjectGrid";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import BackgroundVideo from "@/components/BackgroundVideo";
+import Testimonials from "@/components/Testimonials";
 
 export default function LandingPage() {
   return (
@@ -25,6 +26,7 @@ export default function LandingPage() {
 
         <main>
           <Hero />
+          <Testimonials />
           <About />
           <Services />
           <ProjetosGrid /> 

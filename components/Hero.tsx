@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Sparkles, Zap, Target, Shield, DollarSign } from "lucide-react";
 import { Button } from "./ui/button";
 import Script from "next/script";
-import GoogleReviews from "./GoogleReviews";
+import Testimonials from "./Testimonials";
+
 
 export default function Hero() {
   // Função interna para garantir o scroll suave
@@ -18,7 +19,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative mt-10 pt-24 sm:pt-32 pb-10 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden "
+      className="relative mt-10 pt-24 sm:pt-32 pb-10  px-4 sm:px-6 lg:px-8 overflow-hidden "
       id="hero"
     >
       <div className="container mx-auto max-w-full">
@@ -43,14 +44,16 @@ export default function Hero() {
                 Ou €0.
               </span>
             </h1>
-            <GoogleReviews />
+           
+
+           
 
             {/* Subheadline */}
             <p className=" sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
               <strong className="text-[#F8FAFC]">A diferença?</strong> Design profissional que converte visitantes em clientes.
               <br />
               <br />
-              Por apenas{" "}
+              A partir{" "}
               <strong className="text-[#ff9900]">
                 €700
               </strong>{" "}
@@ -59,6 +62,8 @@ export default function Hero() {
               <strong className="text-[#F8FAFC]">trabalha para si 24/7</strong>{" "}
               e se paga sozinha em semanas.
             </p>
+
+           
 
             {/* Call to Action */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -78,9 +83,10 @@ export default function Hero() {
                 Ver exemplos de sucesso
               </Button>
             </div>
+             
 
-            {/* Highlights / Benefícios */}
-            <div className="flex flex-wrap gap-6 pt-4 ">
+            {/* Highlights / Benefícios - GRID FIXO 2 COLUNAS */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 pt-4 max-w-3xl">
               <BenefitItem
                 icon={<Zap className="w-5 h-5 text-[#ff9900] " />}
                 label={
@@ -127,19 +133,20 @@ export default function Hero() {
           </div>
 
           {/* Hero Image */}
-          <div className="relative animate-in fade-in zoom-in-95 duration-1000 delay-200">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff00e2]/20 to-[#8906e6]/20 blur-3xl rounded-full" />
-            <div className="relative w-full aspect-video sm:aspect-square lg:aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#ff00e2]/20 border border-white/10">
-              <Image
-                src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3"
-                alt="Websites Profissionais para Empresários"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
+<div className="relative animate-in fade-in zoom-in-95 duration-1000 delay-200">
+  <div className="absolute inset-0 bg-gradient-to-r from-[#ff00e2]/20 to-[#8906e6]/20 blur-3xl rounded-full" />
+  <div className="relative w-full aspect-[4/3] sm:aspect-square lg:aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-[#ff00e2]/20 border border-white/10 max-h-[300px] sm:max-h-none">
+    <Image
+      src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3"
+      alt="Websites Profissionais para Empresários"
+      fill
+      priority
+      sizes="(max-width: 768px) 100vw, 50vw"
+      className="object-cover"
+    />
+  </div>
+</div>
+
         </div>
       </div>
     </section>
@@ -157,9 +164,9 @@ function BenefitItem({
   bgColor: string;
 }) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-3">
       <div
-        className={`w-10 h-10 rounded-full ${bgColor} flex items-center justify-center`}
+        className={`w-10 h-10 rounded-full ${bgColor} flex items-center justify-center flex-shrink-0`}
       >
         {icon}
       </div>

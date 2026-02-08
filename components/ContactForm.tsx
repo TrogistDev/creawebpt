@@ -213,13 +213,75 @@ export default function ContactForm() {
                   >
                     Setor de Atuação <span className="text-[#ff00e2]">*</span>
                   </Label>
-                  <Input
-                    id="area"
-                    name="area"
-                    required
-                    className="h-16 bg-[#0a0a0a] border border-white/10 text-white text-xl px-6 rounded-2xl focus:border-[#373dff] transition-all placeholder:text-white/20"
-                    placeholder="Ex: Imobiliário, Saúde, E-commerce"
-                  />
+                  <div className="relative">
+                    <Select name="area" required>
+                      <SelectTrigger className="w-full h-16 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff]">
+                        <SelectValue placeholder="Selecione o seu setor" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-[#1A1A1B] border border-[#373dff]/20 text-white rounded-xl">
+                        <SelectItem
+                          value="restauracao"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Restauração
+                        </SelectItem>
+                        <SelectItem
+                          value="saude"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Saúde (Clínicas, Dentistas, Fisioterapia)
+                        </SelectItem>
+                        <SelectItem
+                          value="beleza"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Beleza e Estética (Salões, Barbeiros, SPAs)
+                        </SelectItem>
+                        <SelectItem
+                          value="ecommerce"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          E-commerce / Loja Online
+                        </SelectItem>
+                        <SelectItem
+                          value="imobiliario"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Imobiliário
+                        </SelectItem>
+                        <SelectItem
+                          value="educacao"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Educação (Cursos, Escolas, Formação)
+                        </SelectItem>
+                        <SelectItem
+                          value="consultoria"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Consultoria / Serviços Profissionais
+                        </SelectItem>
+                        <SelectItem
+                          value="fitness"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Fitness / Ginásios
+                        </SelectItem>
+                        <SelectItem
+                          value="turismo"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Turismo e Hotelaria
+                        </SelectItem>
+                        <SelectItem
+                          value="outro"
+                          className="py-3 text-lg focus:bg-[#373dff]/20"
+                        >
+                          Outro
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
               </div>
             </div>
@@ -433,39 +495,7 @@ export default function ContactForm() {
                   </Select>
                 </div>
               </div>
-              <div className="space-y-3">
-                <Label className="text-[#ffffff] text-sm uppercase tracking-wide font-semibold ml-1">
-                  Processo de Decisão
-                </Label>
-                <div className="relative">
-                  {/* Este não é estritamente obrigatório, removi o asterisco */}
-                  <Select name="decisao">
-                    <SelectTrigger className="w-full h-16 bg-[#0a0a0a] border border-white/10 text-white text-lg px-6 rounded-2xl focus:border-[#373dff] focus:ring-1 focus:ring-[#373dff]">
-                      <SelectValue placeholder="Como funciona?" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-[#1A1A1B] border border-[#373dff]/20 text-white rounded-xl">
-                      <SelectItem
-                        value="unico"
-                        className="py-3 text-lg focus:bg-[#373dff]/20"
-                      >
-                        Decido sozinho(a)
-                      </SelectItem>
-                      <SelectItem
-                        value="socios"
-                        className="py-3 text-lg focus:bg-[#373dff]/20"
-                      >
-                        Decido com sócios
-                      </SelectItem>
-                      <SelectItem
-                        value="diretoria"
-                        className="py-3 text-lg focus:bg-[#373dff]/20"
-                      >
-                        Necessita aprovação superior
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
+              
             </div>
             {/* LINHA 3: Referências (NOVO) */}
             <div className="space-y-3">
