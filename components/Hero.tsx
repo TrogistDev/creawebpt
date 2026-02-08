@@ -29,18 +29,18 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A1A1B] border border-[#ff9900]/30">
               <Sparkles className="w-4 h-4 text-[#ff9900]" />
               <span className=" text-sm text-[#94A3B8]">
-                A diferença entre gerar €10.000 ou €0 está no design
+                Um site que gera vendas ou apenas ocupa espaço na internet?
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-white tracking-[-0.06em] ">
-              A sua landing page pode gerar{" "}
+            <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-[#e2e2e2] tracking-[-0.06em] ">
+              O seu site pode faturar{" "}
               <span className="bg-gradient-to-r from-[#ff9900] via-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-2">
-                €10.000
+                €10.000/mês
               </span>{" "}
-              em vendas.{" "}
-              <span className="relative text-white pr-4">
+              enquanto dorme.{" "}
+              <span className="relative text-[#e2e2e2] pr-4">
                 Ou €0.
               </span>
             </h1>
@@ -50,17 +50,16 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className=" sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-2xl tracking-wider">
-              <strong className="text-[#F8FAFC]">A diferença?</strong> Design profissional que converte visitantes em clientes.
+              <strong className="text-[#F8FAFC]">A diferença?</strong> Design estratégico que transforma visitantes casuais em clientes pagantes.
               <br />
               <br />
-              A partir{" "}
+              Desde apenas{" "}
               <strong className="text-[#ff9900]">
                 €700
               </strong>{" "}
-              <span className="text-[#94A3B8]">(em até 3x)</span>, tenha uma landing page 
-              que{" "}
-              <strong className="text-[#F8FAFC]">trabalha para si 24/7</strong>{" "}
-              e se paga sozinha em semanas.
+              <span className="text-[#94A3B8]">(parcelado em 3x)</span>, tenha um sistema de vendas automatizado{" "}
+              <strong className="text-[#e2e2e2]">funcionando 24/7</strong>{" "}
+              que se paga sozinho na primeira semana.
             </p>
 
            
@@ -70,9 +69,9 @@ export default function Hero() {
               <Button
                 onClick={() => scrollToSection("contato")}
                 size="lg"
-                className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
+                className="bg-gradient-to-r from-[#a0008d] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-[white] font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
               >
-                Quero uma Proposta Gratuita
+                Receber Proposta Personalizada Grátis
               </Button>
               <Button
                 onClick={() => scrollToSection("trabalhos")}
@@ -80,7 +79,7 @@ export default function Hero() {
                 variant="outline"
                 className="border-2 border-[#ff9900] text-[#ffffff] hover:bg-[#ff9900]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
               >
-                Ver exemplos de sucesso
+                Ver casos de sucesso reais
               </Button>
             </div>
              
@@ -91,7 +90,7 @@ export default function Hero() {
                 icon={<Zap className="w-5 h-5 text-[#ff9900] " />}
                 label={
                   <span className="text-white">
-                    Entrega Ágil em 48h úteis mínimas
+                    Site no ar em 48h úteis
                   </span>
                 }
                 bgColor="bg-[#ff9900]/10"
@@ -99,7 +98,7 @@ export default function Hero() {
               <BenefitItem
                 icon={<Target className="w-5 h-5 text-[#ff00e2]" />}
                 label={
-                  <span className="text-white">Design Focado em Vendas</span>
+                  <span className="text-white">Otimizado para conversão</span>
                 }
                 bgColor="bg-[#ff00e2]/10"
               />
@@ -107,9 +106,9 @@ export default function Hero() {
                 icon={<Shield className="w-5 h-5 text-[#8906e6]" />}
                 label={
                   <span className="text-white">
-                    Resposta em até 1 hora
+                    Suporte prioritário
                     <span className="block text-[14px] text-zinc-500 mt-0.5">
-                      (Horário Comercial)
+                      Resposta garantida em até 1h
                     </span>
                   </span>
                 }
@@ -120,10 +119,10 @@ export default function Hero() {
                 icon={<DollarSign className="w-5 h-5 text-[#0acf14]" />}
                 label={
                   <span className="text-white text-sm">
-                    Investimento a partir de 700€{" "}
-                    <span className="text-zinc-400 text-xs">(Em até 3x)</span>
+                    A partir de €700{" "}
+                    <span className="text-zinc-400 text-xs">(3x sem juros)</span>
                     <span className="block text-[14px] text-zinc-500 mt-0.5">
-                      + manutenção mensal a partir de 40€
+                      Manutenção desde €40/mês
                     </span>
                   </span>
                 }

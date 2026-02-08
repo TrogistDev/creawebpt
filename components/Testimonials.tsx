@@ -73,9 +73,9 @@ export default function Testimonials() {
   return (
     <section className=" flex flex-col items-center justify-center rounded-2xl scroll-mt-45" id='reviews'>
       {/* Título de Apresentação da Sessão */}
-      <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-          Aprovado por quem <span className="text-[#ffbb00]">decidiu crescer</span>
+      <div className="text-center mb-12 px-6 ">
+        <h2 className="text-7xl font-bold text-white mb-4 tracking-[-0.05em] leading-none">
+          Aprovado por quem <span className="text-[#ffbb00] "> <br /> decidiu crescer</span>
         </h2>
         <p className="text-white text-sm md:text-base uppercase tracking-[0.2em] max-w-2xl mx-auto">
           Design de alta conversão que transforma visitantes em clientes reais.
@@ -83,7 +83,7 @@ export default function Testimonials() {
       </div>
 
       {/* Card único com navegação */}
-      <div className="relative w-full max-w-md mb-8 px-4">
+      <div className="relative w-[90%]  md:w-[60%] mb-8 px-4">
         {/* Seta Esquerda */}
         <button
           onClick={prevReview}

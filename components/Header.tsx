@@ -76,7 +76,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection("contato")}
-              className="relative overflow-hidden bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-bold px-8 py-6 2xl:px-12 2xl:py-8 2xl:text-xl rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,226,0.4)] active:scale-95"
+              className="relative overflow-hidden bg-gradient-to-r from-[#a0008d] to-[#8906e6] text-white font-bold px-8 py-6 2xl:px-12 2xl:py-8 2xl:text-xl rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,226,0.4)] active:scale-95"
             >
               <span className="relative z-10">Pedir proposta</span>
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:animate-[shimmer_1.5s_infinite]" />
@@ -104,7 +104,7 @@ export default function Header() {
               
               <Button
                 onClick={() => scrollToSection("contato")}
-                className="bg-gradient-to-r from-[#ff00e2] to-[#8906e6] text-white font-bold w-full py-8 rounded-2xl text-xl"
+                className="bg-gradient-to-r from-[#a0008d] to-[#8906e6] text-white font-bold w-full py-8 rounded-2xl text-xl"
                 
               >
                 Pedir Proposta
