@@ -9,6 +9,7 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import Testimonials from "@/components/Testimonials";
+import ChatWidget from "@/components/ChatWidget";
 
 export default function LandingPage() {
   return (
@@ -35,6 +36,7 @@ export default function LandingPage() {
               vão garantir que o "Grupo 02" funcione visualmente ao marcar */}
           <ContactForm />
         </main>
+        <ChatWidget />
         
         <Footer />
       </div>
