@@ -178,7 +178,7 @@ export default function ChatWidget() {
           </button>
         </div>
         <p className="text-zinc-600 text-[9px] uppercase tracking-widest mt-2 text-center">
-          Powered by Llama-3 AI
+          Powered by Gemini
         </p>
       </form>
     </div>
