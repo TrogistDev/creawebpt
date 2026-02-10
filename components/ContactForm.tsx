@@ -566,6 +566,44 @@ export default function ContactForm() {
                 </div>
               </div>
             </div>
+            {/* CHECKBOX DE POLÍTICA DE PRIVACIDADE */}
+<div className="flex items-start gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors group">
+  <div className="relative flex items-center h-5">
+    <input
+      id="privacy"
+      name="privacy"
+      type="checkbox"
+      required
+      className="peer h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-white/20 bg-transparent transition-all checked:bg-[#373dff] checked:border-[#373dff] focus:ring-1 focus:ring-[#373dff] focus:ring-offset-0"
+    />
+    {/* Ícone de Check customizado (aparece quando o input é checked) */}
+    <svg
+      className="absolute h-4 w-4 pointer-events-none hidden peer-checked:block text-white left-1 top-1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  </div>
+  <label
+    htmlFor="privacy"
+    className="text-sm sm:text-base text-white/70 cursor-pointer select-none leading-tight group-hover:text-white transition-colors"
+  >
+    Li e aceito que os meus dados sejam processados pela Crea Web para efeitos de contacto comercial, de acordo com a{" "}
+    <a 
+      href="/politica-de-privacidade" 
+      target="_blank" 
+      className="text-[#ff00e2] hover:underline font-medium"
+    >
+      Política de Privacidade
+    </a>. <span className="text-[#ff00e2]">*</span>
+  </label>
+</div>
             {/* AVISO IMPORTANTE (Movido para perto do botão) */}
             <div className="text-center space-y-4">
               <p className="text-lg sm:text-xl text-[#ffffff] font-light leading-relaxed animate-pulse">

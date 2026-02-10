@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Instagram } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -37,6 +38,13 @@ export default function Footer() {
           Transformando ideias em resultados digitais
         </p>
       </div>
+      <Image
+      src={`/logo_livro.png`}
+      width={100}
+      height={100}
+      alt="Livro de Reclamações Eletrónico"
+      className="mx-auto mt-6"
+      />
     </footer>
   );
 }
