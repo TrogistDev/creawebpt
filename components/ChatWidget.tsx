@@ -68,6 +68,8 @@ export default function ChatWidget() {
   <button 
   onClick={() => setIsOpen(!isOpen)}
   className="relative bg-[#8906e6] p-4 rounded-full shadow-lg shadow-[#ff00e2]/40 hover:scale-110 hover:shadow-[#ff00e2]/60 transition-all duration-300 border-2 border-[#ff00e2]/50 group"
+  aria-expanded={isOpen}
+  aria-label={isOpen ? "Fechar chat" : "Abrir chat de suporte"}
   style={{
     boxShadow: '0 0 30px rgba(255, 0, 226, 0.4), 0 0 60px rgba(137, 6, 230, 0.3)'
   }}
@@ -83,7 +85,10 @@ export default function ChatWidget() {
 </button>
 
   {isOpen && (
-    <div className="absolute bottom-20 right-0 w-[380px] h-[550px] bg-gradient-to-b from-zinc-950 to-black border border-white/10 rounded-3xl flex flex-col overflow-hidden shadow-2xl backdrop-blur-xl animate-in slide-in-from-bottom-4 duration-300">
+    <div 
+    role="dialog" // Acessibilidade
+    aria-label="Chat de suporte AI"
+    className="absolute bottom-20 right-0 w-[380px] h-[550px] bg-gradient-to-b from-zinc-950 to-black border border-white/10 rounded-3xl flex flex-col overflow-hidden shadow-2xl backdrop-blur-xl animate-in slide-in-from-bottom-4 duration-300">
       
       {/* Header do Chat */}
       <div className="p-5 border-b border-white/5 bg-gradient-to-r from-[#ff00e2]/10 to-[#8906e6]/10 backdrop-blur-sm">
@@ -102,7 +107,9 @@ export default function ChatWidget() {
       </div>
 
       {/* Mensagens */}
-      <div className="flex-1 overflow-y-auto p-5 space-y-4 bg-[#0a0a0a]">
+      <div className="flex-1 overflow-y-auto p-5 space-y-4 bg-[#0a0a0a]"
+      aria-live="polite"
+      >
         {/* Mensagem de boas-vindas */}
         {messages.length === 0 && (
           <div className="flex justify-start">
