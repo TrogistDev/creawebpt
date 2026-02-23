@@ -87,6 +87,7 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-[#373dff]/20 transition-all text-white"
+            aria-expanded={menuOpen ? true : false}
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -94,7 +95,7 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         {menuOpen && (
-          <div className="md:hidden absolute top-[100%] left-4 right-4 mt-2 bg-[#0D0D0D]/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+          <div className="md:hidden absolute top-[100%] left-4 right-4 mt-2 bg-[#0D0D0D]/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300" >
             <nav className="flex flex-col p-8 space-y-6">
               <MobileNavLink label="Sobre Nós" onClick={() => scrollToSection("sobre")} />
               <MobileNavLink label="Serviços" onClick={() => scrollToSection("servicos")} />
