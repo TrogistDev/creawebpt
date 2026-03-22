@@ -71,21 +71,7 @@ export default function ContactForm() {
         const email = data.email; // Pegue do input
         console.log(data.email);
 
-        // 1. Dispara o Pixel normal (se não estiver bloqueado, ele vai)
-        if (window.fbq) {
-          window.fbq("track", "Lead", { email: email }, { eventID: eventId });
-        }
-
-        // 2. Dispara a CAPI (sua API interna que os bloqueadores não veem)
-        fetch("/api/fb-capi", {
-          method: "POST",
-          body: JSON.stringify({
-            email: email,
-            eventName: "Lead",
-            eventSourceUrl: window.location.href,
-            eventId: eventId,
-          }),
-        });
+        
         trackConversion(); // Chama a função para enviar o evento de conversão
         form.reset();
       } else {

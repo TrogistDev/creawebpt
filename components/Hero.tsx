@@ -140,6 +140,7 @@ export default function Hero() {
       alt="Websites Profissionais para Empresários"
       fill
       priority
+      unoptimized
       sizes="(max-width: 768px) 100vw, 50vw"
       className="object-cover"
     />

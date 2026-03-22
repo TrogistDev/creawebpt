@@ -7,10 +7,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TechButton from "./TechButton";
 
+
 const projects = [
-  { id: 1, image: "/dentwise.webp", title: "Dentwise - Saúde Digital", description: "Plataforma digital de alta performance desenvolvida para clínicas odontológicas.", link: "https://dentwise-wheat.vercel.app/" },
-  { id: 2, image: "/maketto.webp", title: "Página para reserva de mesas em noites de sushi", description: "Página de Reservas feito para o Restaurante Sushi Maketto, de Ponte de Lima. Design por terminar.", link: "https://sushi-maketto-reservas.vercel.app" },
-  { id: 3, image: "/Awwards.webp", title: "Landing Page", description: "Página de apresentação de produtos e serviços - IN PROGRESS", link: "https://awwards-f5oz.vercel.app" },
+  { id: 1, image: "https://res.cloudinary.com/mandabir/image/upload/v1774183058/dentwise_uod3cb.webp", title: "Dentwise - Saúde Digital", description: "Plataforma digital de alta performance desenvolvida para clínicas odontológicas.", link: "https://dentwise-wheat.vercel.app/" },
+  { id: 2, image: "https://res.cloudinary.com/mandabir/image/upload/v1774183058/maketto_wf3nxw.webp", title: "Página para reserva de mesas em noites de sushi", description: "Página de Reservas feito para o Restaurante Sushi Maketto, de Ponte de Lima. Design por terminar.", link: "https://sushi-maketto-reservas.vercel.app" },
+  { id: 3, image: "https://res.cloudinary.com/mandabir/image/upload/v1774183057/Awwards_i35erv.webp", title: "Landing Page", description: "Página de apresentação de produtos e serviços", link: "https://awwards-f5oz.vercel.app" },
+  { id: 3, image: "https://res.cloudinary.com/mandabir/image/upload/v1774182937/mojito_1_tdkbhf.webp", title: "Landing Page", description: "Página de apresentação de produtos e serviços", link: "https://gsap-mojito-nu.vercel.app/" },
 ];
 
 export default function ProjetosGrid() {
@@ -48,13 +50,15 @@ export default function ProjetosGrid() {
                 <div className="relative aspect-video w-full overflow-hidden">
                   <motion.div 
                     layoutId={`card-image-${project.id}`}
-                    className="w-full h-full"
+                    className=" relative w-full h-full"
                   >
                     <Image 
                       src={project.image} 
                       alt={project.title} 
                       fill 
                       unoptimized 
+                      priority={project.id === 1} 
+  loading={project.id === 1 ? undefined : "lazy"}
                       className="object-contain transition-transform duration-700 w-auto" 
                     />
                   </motion.div>
@@ -98,7 +102,8 @@ export default function ProjetosGrid() {
                   src={projects[currentIndex].image} 
                   alt={projects[currentIndex].title} 
                   fill 
-                  unoptimized 
+                  unoptimized
+                  
                   className="object-contain" 
                 />
               </div>

@@ -87,7 +87,7 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-[#373dff]/20 transition-all text-white"
-            aria-expanded={menuOpen ? true : false}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
