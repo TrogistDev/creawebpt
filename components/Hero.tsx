@@ -34,13 +34,13 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-[#e2e2e2] tracking-[-0.06em] ">
+            <h1 className=" text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1] text-[#c5c5c5] tracking-[-0.06em] ">
               O seu site pode faturar{" "}
               <span className="bg-gradient-to-r from-[#ff9900] via-[#ff9900] to-[#ff9900] bg-clip-text text-transparent pr-2">
                 €10.000/mês
               </span>{" "}
               enquanto dorme.{" "}
-              <span className="relative text-[#e2e2e2] pr-4">
+              <span className="relative text-[#aaaaaa] pr-4">
                 Ou €0.
               </span>
             </h1>
@@ -69,7 +69,7 @@ export default function Hero() {
               <Button
                 onClick={() => scrollToSection("contato")}
                 size="lg"
-                className="bg-gradient-to-r from-[#a0008d] to-[#8906e6] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-[white] font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
+                className="bg-gradient-to-r from-[#a0008d] to-[#6404a8] hover:from-[#ff00e2]/90 hover:to-[#8906e6]/90 text-[#e7e7e7] font-semibold px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#ff00e2]/30 transition-all duration-300 hover:shadow-[#ff00e2]/50 hover:scale-105"
               >
                 Receber Proposta Personalizada Grátis
               </Button>
@@ -77,7 +77,7 @@ export default function Hero() {
                 onClick={() => scrollToSection("trabalhos")}
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#ff9900] text-[#ffffff] hover:bg-[#ff9900]/10 px-8 py-6 text-lg rounded-lg transition-all duration-300"
+                className="border-2 border-[#ff9900] text-[#ffffff] hover:!bg-[#263cb9] px-8 py-6 text-lg rounded-lg transition-all duration-100"
               >
                 Ver casos de sucesso reais
               </Button>

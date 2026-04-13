@@ -84,8 +84,8 @@ export default function Testimonials() {
     <section className=" flex flex-col items-center justify-center rounded-2xl scroll-mt-45 min-h-[600px] w-full" id='reviews'>
       {/* Título de Apresentação da Sessão */}
       <div className="text-center mb-12 px-6 ">
-        <h2 className="text-7xl font-bold text-white mb-4 tracking-[-0.05em] leading-none">
-          Aprovado por quem <span className="text-[#ffbb00] "> <br /> decidiu crescer</span>
+        <h2 className="text-7xl font-bold text-[#d1d1d1] mb-4 tracking-[-0.05em] leading-none">
+          Aprovado por quem <span className="text-[#d49c00] "> <br /> decidiu crescer</span>
         </h2>
         <p className="text-white text-sm md:text-base uppercase tracking-[0.2em] max-w-2xl mx-auto">
           Design de alta conversão que transforma visitantes em clientes reais.

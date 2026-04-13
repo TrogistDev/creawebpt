@@ -94,10 +94,10 @@ export default function ContactForm() {
   return (
     <section
       id="contato"
-      className="py-20 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] "
+      className="py-5 sm:py-32 -px-4 sm:px-6 lg:px-8 bg-[#0d0d0d2f] "
     >
-      <div className="text-center mb-16 animate-fade-in -px-4 bg-black/10  w-fit mx-auto">
-        <h2 className="text-6xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-white -border-4">
+      <div className="text-center mb-8 animate-fade-in -px-4 bg-black/10  w-fit mx-auto">
+        <h2 className="text-7xl sm:text-7xl lg:text-[100px] font-bold mb-6 tracking-[-0.04em] leading-[0.8] lg:leading-[0.9] text-[#dadada] -border-4">
           O fim das{" "}
           <span className="inline-block relative">
             <span className="bg-gradient-to-r from-[#ffbb00] via-[#ff9100] to-[#e67206] bg-clip-text text-transparent pb-2 pr-2">
@@ -106,7 +106,7 @@ export default function ContactForm() {
             <span className="absolute bottom-2 left-0 w-full h-[6px] bg-[#ffbb00]/20 blur-sm rounded-full "></span>
           </span>
         </h2>
-        <p className="text-lg sm:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-lg sm:text-2xl text-[#ffffff] max-w-3xl mx-auto font-light leading-relaxed">
           Toda agência pedirá estes dados. Nós apenas os organizamos para você
           não perder 1 hora em call.
           <span className="text-white font-medium">

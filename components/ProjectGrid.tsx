@@ -29,20 +29,20 @@ export default function ProjetosGrid() {
   };
 
   return (
-    <section id="trabalhos" className="py-20 bg-[#0d0d0d60] overflow-hidden relative">
+    <section id="trabalhos" className="py-10 bg-[#0d0d0d00] overflow-hidden relative">
       <div className="container mx-auto max-w-[1920px]">
         
-        <div className="mb-16 px-4 lg:px-12">
-          <h2 className="text-4xl 2xl:text-6xl font-bold text-white mb-4">Projetos em Destaque</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-[#373dff] to-[#ff00e2]" />
+        <div className=" pb-9 2xl:pb-40 px-4 lg:px-12">
+          <h2 className="text-6xl 2xl:text-7xl font-bold text-[#e4e4e4] mb-2">Projetos em Destaque</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-[#2a2fbe] to-[#b1019c]" />
         </div>
 
         <div className="relative w-full">
           {/* Degradês Laterais para sumir suavemente */}
-          <div className="absolute inset-y-0 left-0 w-[20%] z-30 bg-gradient-to-r from-[#0d0d0d] to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-[20%] z-30 bg-gradient-to-r from-[#0d0d0dd8] to-transparent pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-[20%] z-30 bg-gradient-to-l from-[#0d0d0d] to-transparent pointer-events-none" />
 
-          <div className="relative h-[650px] flex items-center justify-center">
+          <div className="relative h-[500px] flex items-center justify-center">
             {/* O AnimatePresence agora rastreia o currentIndex para disparar a animação */}
             <AnimatePresence initial={false} mode="popLayout">
               {[-1, 0, 1].map((offset) => {
@@ -55,7 +55,7 @@ export default function ProjetosGrid() {
                     initial={{ 
                       x: offset === 0 ? (direction > 0 ? "100%" : "-100%") : `${offset * 110}%`,
                       opacity: 0,
-                      scale: 0.8
+                      scale: 0
                     }}
                     animate={{
                       x: `${offset * 105}%`,
@@ -71,11 +71,11 @@ export default function ProjetosGrid() {
                     transition={{
                       type: "spring",
                       stiffness: 150, // Rigidez da mola
-                      damping: 12,    // Menos amortecimento = Mais "quique" elástico
+                      damping: 16,    // Menos amortecimento = Mais "quique" elástico
                       mass: 0.8,
                       velocity: 2
                     }}
-                    className="absolute w-[85%] sm:w-[550px] lg:w-[700px] cursor-pointer"
+                    className="absolute w-[85%] sm:w-[550px] lg:w-[650px] cursor-pointer"
                     onClick={() => offset !== 0 && (offset === 1 ? nextSlide() : prevSlide())}
                   >
                     <Card className="bg-[#1A1A1B] border-white/5 overflow-hidden h-full shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
@@ -105,12 +105,12 @@ export default function ProjetosGrid() {
           </div>
 
           {/* Setas de Navegação */}
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-2 sm:px-10 z-40 pointer-events-none">
+          <div className="absolute inset-x-[-10] top-1/2 -translate-y-1/2 flex justify-between px-2 sm:px-10 z-40 pointer-events-none">
             <button onClick={prevSlide} className="p-4 rounded-full bg-zinc-900/50 backdrop-blur-md text-white pointer-events-auto border border-white/10 hover:bg-[#373dff] transition-all active:scale-90">
-              <ChevronLeft size={32} />
+              <ChevronLeft size={25} />
             </button>
             <button onClick={nextSlide} className="p-4 rounded-full bg-zinc-900/50 backdrop-blur-md text-white pointer-events-auto border border-white/10 hover:bg-[#373dff] transition-all active:scale-90">
-              <ChevronRight size={32} />
+              <ChevronRight size={25} />
             </button>
           </div>
         </div>

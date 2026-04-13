@@ -7,17 +7,17 @@ export default function About() {
   return (
     <section
       id="sobre"
-      className="py-20  px-4 sm:px-6 lg:px-8 bg-[#0d0d0d00] overflow-hidden "
+      className="pt-20 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d00] overflow-hidden "
     >
       <div className="container mx-auto max-w-full">
             <span className="text-[#ff9900] uppercase tracking-[0.5em] text-sm font-medium border-l-2 border-[#ff9900] pl-4 ml-1">
               Sobre a nossa visão
             </span>
-        <div className="flex flex-col lg:flex-row gap-16 lg:items-stretch ">
+        <div className="flex flex-col lg:flex-row gap-1 lg:items-stretch ">
           
           {/* Lado Esquerdo: Título Impactante */}
-          <div className="lg:w-1/2 space-y-6 flex flex-col justify-between self-stretch">
-            <h2 className="mt-8 text-6xl sm:text-6xl lg:text-8xl font-bold text-white tracking-[-0.05em] leading-[0.85]">
+          <div className="lg:w-1/2 space-y-6 pt-2 flex flex-col justify-between self-stretch">
+            <h2 className=" text-6xl sm:text-6xl lg:text-8xl font-bold text-[#e0e0e0] tracking-[-0.05em] leading-[0.85]">
               Entendemos <br />
               <span className="bg-gradient-to-r from-[#ff9900] to-[#e69806] bg-clip-text text-transparent pr-2">
                 os desafios
@@ -25,15 +25,15 @@ export default function About() {
               do seu negócio
             </h2>
             {/* Frase de Efeito Final */}
-            <div className="pt-4">
-              <p className="text-xl sm:text-3xl font-extrabold text-white tracking-tighter uppercase leading-none opacity-40">
+            <div>
+              <p className="text-xl sm:text-3xl font-extrabold text-[#d6d6d6] tracking-tighter uppercase leading-[1.1] opacity-80">
                 Clareza <span className="text-[#ff9900]">.</span> Profissionalismo <span className="text-[#ff9900]">.</span> Resultados
               </p>
             </div>
           </div>
 
           {/* Lado Direito: Conteúdo e Proposta de Valor */}
-          <div className="lg:w-1/2 space-y-12">
+          <div className="lg:w-1/2">
             
             {/* Bloco de Problemas (A Dor) */}
             <div className=" text-lg text-[#94A3B8] font-light leading-tight tracking-wide
@@ -49,15 +49,15 @@ export default function About() {
             </div>
 
             {/* Bloco de Solução (O Diferencial) - Glassmorphism Card */}
-            <div className="relative group">
+            <div className="relative group pt-5">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#ff9900]/20 to-[#eebe22]/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative p-8 bg-[#1A1A1B]/50 border border-white/10 rounded-2xl backdrop-blur-xl">
+              <div className="relative p-8 bg-[#1A1A1B]/50 border  rounded-2xl backdrop-blur-xl">
                 <p className="text-lg sm:text-xl text-[#94A3B8] leading-relaxed">
                   A <strong className="text-[#ff9900] font-bold">Crea Web PT</strong> não é apenas mais uma agência. 
                   Somos o seu <span className="text-white font-semibold">parceiro estratégico</span> focado em transformar a sua presença digital num ativo que gera resultados concretos.
                 </p>
                 
-                <div className="mt-8 pt-8 border-t border-white/10 flex flex-col gap-4">
+                <div className="mt-1 pt-1  flex flex-col gap-2">
                   <div className="flex items-center gap-3 text-[#eebe22] font-semibold uppercase tracking-[0.15em] text-xs">
                     <CheckCircle2 size={18} />
                     Aumento de Vendas e Contactos

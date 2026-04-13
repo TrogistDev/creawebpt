@@ -67,7 +67,7 @@ export default function ChatWidget() {
   {/* Botão de Abrir Chat com animação de pulso */}
   <button 
   onClick={() => setIsOpen(!isOpen)}
-  className="relative bg-[#8906e6] p-4 rounded-full shadow-lg shadow-[#ff00e2]/40 hover:scale-110 hover:shadow-[#ff00e2]/60 transition-all duration-300 border-2 border-[#ff00e2]/50 group"
+  className="relative bg-[#6703af] p-4 rounded-full shadow-lg shadow-[#ff00e2]/40 hover:scale-110 hover:shadow-[#ff00e2]/60 transition-all duration-300 border-2 border-[#ff00e2]/50 group"
   aria-expanded={isOpen}
   aria-label={isOpen ? "Fechar chat" : "Abrir chat de suporte"}
   style={{
@@ -80,7 +80,7 @@ export default function ChatWidget() {
   {isOpen ? (
     <X className="w-6 h-6 text-white" />
   ) : (
-    <MessageCircle className="w-6 h-6 text-white" />
+    <MessageCircle className="w-6 h-6 text-white/80" />
   )}
 </button>
 
@@ -94,7 +94,7 @@ export default function ChatWidget() {
       <div className="p-5 border-b border-white/5 bg-gradient-to-r from-[#ff00e2]/10 to-[#8906e6]/10 backdrop-blur-sm">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#ff00e2] to-[#8906e6] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#990087] to-[#590496] flex items-center justify-center">
               <span className="text-white text-lg">🤖</span>
             </div>
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-zinc-950"></span>

@@ -32,13 +32,13 @@ export default function Services() {
   };
 
   return (
-    <section id="servicos" className="py-20 sm:py-32 px-4 bg-[#0d0d0d2f]">
+    <section id="servicos" className="pt-15 sm:py-32 px-4 bg-[#0d0d0d2f]">
       <div className="container mx-auto max-w-full">
         
         {/* Header da Seção */}
-        <div className="text-center mb-16 sm:mb-24">
-          <h2 className="text-5xl sm:text-7xl lg:text-[120px] font-bold tracking-[-0.05em] leading-[0.9] text-white pb-6">
-            O que{" "}
+        <div className="text-center mb-5 sm:mb-15">
+          <h2 className="text-7xl sm:text-7xl lg:text-[120px] font-bold tracking-[-0.05em] leading-[0.9] text-[#e6e6e6] pb-6">
+            O que{' '}
             <span className="bg-gradient-to-r from-[#ffbb00] to-[#e6b206] bg-clip-text text-transparent pr-4">
               fazemos
             </span>
@@ -140,7 +140,7 @@ export default function Services() {
         </div>
 
         {/* Botão */}
-        <div className="text-center mt-16 sm:mt-24">
+        <div className="text-center mt-5 sm:mt-24">
           <Button
             onClick={() => scrollToSection("contato")}
             className="w-full sm:w-auto bg-gradient-to-r from-[#050deb] to-[#168697] text-white font-bold px-8 py-6 text-base rounded-xl hover:scale-105 transition-transform"
