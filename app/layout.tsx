@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Web Design Portugal", "Web Design"
   ].join(", "),
   metadataBase: new URL("https://www.creawebpt.pt"),
-  alternates: { canonical: "/" },
+  alternates: { canonical: "https://www.creawebpt.pt" },
   openGraph: {
     title: "Crea Web PT - Websites que Convertem",
     description: "Websites e aplicações web de alta performance para o mercado português.",
@@ -31,7 +31,12 @@ export const metadata: Metadata = {
     siteName: "Crea Web PT",
     locale: "pt_PT",
     type: "website",
-    images: ["/favico.png"],
+    images: [{
+    url: "/og-image.webp", // Uma imagem bonita do seu site
+    width: 1200,
+    height: 630,
+    alt: "Crea Web PT - Websites Profissionais",
+  },],
   },
   robots: {
     index: true,
@@ -57,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
+              "@type": "SoftwareApplication",
               name: "Crea Web PT",
               address: { "@type": "PostalAddress", addressCountry: "PT" },
               description: "Desenvolvimento de websites e landing pages de alta conversão.",
@@ -82,24 +87,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
 
-        {/* 2. Facebook Pixel Otimizado */}
-        <Script id="fb-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+        
       </head>
 
-      <body className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans`}>
+      <body className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
         
         {/* Banner de Cookies que controla o consentimento */}
@@ -107,14 +98,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* 3. Google Ads - Carrega de forma otimizada */}
         <Script
+          id="google-ads-script"
           src="https://www.googletagmanager.com/gtag/js?id=AW-17878117822"
           strategy="lazyOnload" 
         />
 
         <Script id="google-ads-config" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17878117822', {
               'animate_ad_signals': true
