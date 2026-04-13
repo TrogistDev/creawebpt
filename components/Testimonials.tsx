@@ -40,7 +40,17 @@ export default function Testimonials() {
     setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
-  if (reviews.length === 0) return null;
+  if (reviews.length === 0) {
+  return (
+    <section className="flex flex-col items-center justify-center min-h-[600px] w-full animate-pulse">
+      <div className="text-center mb-12">
+        <div className="h-16 w-64 bg-zinc-800 rounded-lg mx-auto mb-4" /> {/* Esqueleto do Título */}
+        <div className="h-4 w-48 bg-zinc-800 rounded mx-auto" /> {/* Esqueleto do Subtítulo */}
+      </div>
+      <div className="w-[90%] md:w-[60%] h-64 bg-zinc-900/40 rounded-[2rem] border border-white/5" /> {/* Esqueleto do Card */}
+    </section>
+  );
+}
 
   const currentReview = reviews[currentIndex];
 
@@ -71,7 +81,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className=" flex flex-col items-center justify-center rounded-2xl scroll-mt-45" id='reviews'>
+    <section className=" flex flex-col items-center justify-center rounded-2xl scroll-mt-45 min-h-[600px] w-full" id='reviews'>
       {/* Título de Apresentação da Sessão */}
       <div className="text-center mb-12 px-6 ">
         <h2 className="text-7xl font-bold text-white mb-4 tracking-[-0.05em] leading-none">

@@ -7,36 +7,55 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner"; // Importe o banner que criamos
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: 'swap',
+});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Crea Web PT - Websites que Convertem e Geram Resultados",
-  description: "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
+  description:
+    "Desenvolvemos websites profissionais, landing pages de conversão e aplicações web para empresários que querem aumentar vendas e gerar contactos. Clareza, profissionalismo e resultados.",
   keywords: [
-    "websites profissionais portugal", "criação de landing pages de conversão", 
-    "desenvolvimento de aplicações web à medida", "agência de marketing digital portugal",
-    "especialista em SEO e conversão", "desenvolvimento Next.js e React",
-    "soluções digitais para empresários", "criação de lojas online",
-    "consultoria de presença digital", "Criação de sites portugal",
-    "Web Design Portugal", "Web Design"
+    "websites profissionais portugal",
+    "criação de landing pages de conversão",
+    "desenvolvimento de aplicações web à medida",
+    "agência de marketing digital portugal",
+    "especialista em SEO e conversão",
+    "desenvolvimento Next.js e React",
+    "soluções digitais para empresários",
+    "criação de lojas online",
+    "consultoria de presença digital",
+    "Criação de sites portugal",
+    "Web Design Portugal",
+    "Web Design",
   ].join(", "),
   metadataBase: new URL("https://www.creawebpt.pt"),
   alternates: { canonical: "https://www.creawebpt.pt" },
   openGraph: {
     title: "Crea Web PT - Websites que Convertem",
-    description: "Websites e aplicações web de alta performance para o mercado português.",
+    description:
+      "Websites e aplicações web de alta performance para o mercado português.",
     url: "https://www.creawebpt.pt",
     siteName: "Crea Web PT",
     locale: "pt_PT",
     type: "website",
-    images: [{
-    url: "/og-image.webp", // Uma imagem bonita do seu site
-    width: 1200,
-    height: 630,
-    alt: "Crea Web PT - Websites Profissionais",
-  },],
+    images: [
+      {
+        url: "/og-image.webp", // Uma imagem bonita do seu site
+        width: 1200,
+        height: 630,
+        alt: "Crea Web PT - Websites Profissionais",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -51,7 +70,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt">
       <head>
@@ -65,12 +88,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "SoftwareApplication",
               name: "Crea Web PT",
               address: { "@type": "PostalAddress", addressCountry: "PT" },
-              description: "Desenvolvimento de websites e landing pages de alta conversão.",
+              description:
+                "Desenvolvimento de websites e landing pages de alta conversão.",
               url: "https://www.creawebpt.pt",
             }),
           }}
         />
-        
+
         {/* 1. Google Consent Mode v2 - DEVE vir antes de qualquer script de track */}
         <Script id="google-consent-mode" strategy="beforeInteractive">
           {`
@@ -87,12 +111,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
 
-        
+        <link rel="preconnect" href="https://region1.google-analytics.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
       </head>
 
-      <body className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${anton.variable} ${playfair.variable} font-sans antialiased`}
+      >
         {children}
-        
+
         {/* Banner de Cookies que controla o consentimento */}
         <CookieBanner />
 
@@ -100,7 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           id="google-ads-script"
           src="https://www.googletagmanager.com/gtag/js?id=AW-17878117822"
-          strategy="lazyOnload" 
+          strategy="lazyOnload"
         />
 
         <Script id="google-ads-config" strategy="lazyOnload">
@@ -124,7 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
 
         <Toaster position="top-right" richColors />
-        
+
         {/* 4. Google Analytics - Respeita o consentimento automaticamente através do Consent Mode */}
         <GoogleAnalytics gaId="G-GPM9L20D2C" />
       </body>
