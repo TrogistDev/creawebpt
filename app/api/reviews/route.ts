@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const apiKey = "AIzaSyCqhtG78EE4_A55dGXevpRschn3fDZZ8jg";
-  const placeId = "ChIJ8QV6Iee3JQ0Rk8Z-gBhOgGE";
+  const apiKey = process.env.GOOGLE_API_KEY
+  const placeId = process.env.GOOGLE_PLACE_ID
 
   // Note que a URL mudou para o domínio 'places.googleapis.com'
   const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=pt-BR`;
